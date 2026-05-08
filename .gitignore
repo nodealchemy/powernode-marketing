@@ -1,0 +1,3 @@
+# Frontend dependencies — installed via the parent platform's npm tree
+# and symlinked in (see frontend/node_modules → ../../../frontend/node_modules).
+node_modules
