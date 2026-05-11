@@ -51,7 +51,7 @@ export const WaitlistSignupForm: React.FC<WaitlistSignupFormProps> = ({ source =
         className="max-w-md mx-auto p-6 bg-theme-success/10 rounded-2xl border border-theme-success-solid text-center"
         data-testid="waitlist-success"
       >
-        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-theme-success-solid flex items-center justify-center">
+        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-theme-success flex items-center justify-center">
           <Check className="w-6 h-6 text-white" />
         </div>
         <p className="text-theme-primary font-semibold">{success}</p>
@@ -76,7 +76,7 @@ export const WaitlistSignupForm: React.FC<WaitlistSignupFormProps> = ({ source =
         <button
           type="submit"
           disabled={submitting || !email}
-          className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-theme-info-solid hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+          className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-theme-info hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
           data-testid="waitlist-submit"
         >
           <span>{submitting ? 'Joining…' : 'Join Waitlist'}</span>

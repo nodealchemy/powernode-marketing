@@ -101,7 +101,7 @@ export const PricingPage: React.FC = () => {
                   : 'bg-theme-background border border-theme'}`}
               >
                 {tier.highlighted && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-theme-info-solid text-white text-xs font-bold rounded-full uppercase tracking-wider">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-theme-info text-white text-xs font-bold rounded-full uppercase tracking-wider">
                     Recommended
                   </div>
                 )}
@@ -122,7 +122,7 @@ export const PricingPage: React.FC = () => {
                 <Link
                   to={tier.ctaLink}
                   className={`inline-flex items-center justify-center space-x-2 w-full px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${tier.highlighted
-                    ? 'bg-theme-info-solid hover:bg-theme-interactive-primary-hover text-white shadow-lg hover:shadow-xl'
+                    ? 'bg-theme-info hover:bg-theme-interactive-primary-hover text-white shadow-lg hover:shadow-xl'
                     : 'bg-theme-surface hover:bg-theme-background-secondary text-theme-primary border border-theme'}`}
                   data-testid={`pricing-cta-${tier.name.toLowerCase()}`}
                 >

@@ -36,7 +36,7 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/plans"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-theme-info-solid hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-theme-info hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
               data-testid="hero-cta-cloud"
             >
               <span>Try the Cloud — Free</span>

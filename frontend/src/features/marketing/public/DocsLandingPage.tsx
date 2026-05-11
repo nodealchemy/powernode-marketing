@@ -166,7 +166,7 @@ export const DocsLandingPage: React.FC = () => {
             href={`${GITHUB_BASE}/docs`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-theme-info-solid hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-lg transition-colors text-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-theme-info hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-lg transition-colors text-sm"
           >
             Browse all docs on GitHub <ExternalLink className="w-4 h-4" />
           </a>
