@@ -123,7 +123,7 @@ export const CampaignContentEditor: React.FC<CampaignContentEditorProps> = ({
         </div>
       )}
 
-      <div className="flex justify-end gap-3 pt-4 border-t border-theme-border">
+      <div className="flex justify-end gap-3 pt-4 border-t border-theme">
         <button type="button" onClick={onCancel} className="btn-theme btn-theme-secondary">
           Cancel
         </button>

@@ -146,7 +146,7 @@ export const EmailSubscriberTable: React.FC<EmailSubscriberTableProps> = ({ list
         <div className="card-theme overflow-hidden">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-theme-border">
+              <tr className="border-b border-theme">
                 <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Email</th>
                 <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase hidden md:table-cell">Name</th>
                 <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Status</th>

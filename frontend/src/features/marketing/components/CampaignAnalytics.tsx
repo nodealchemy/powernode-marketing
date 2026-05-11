@@ -119,7 +119,7 @@ export const CampaignAnalytics: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-theme-border">
+                <tr className="border-b border-theme">
                   <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Campaign</th>
                   <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Type</th>
                   <th className="text-right px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Impressions</th>

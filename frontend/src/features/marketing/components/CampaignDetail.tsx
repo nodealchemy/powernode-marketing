@@ -116,7 +116,7 @@ export const CampaignDetail: React.FC<CampaignDetailProps> = ({ campaignId }) =>
       </div>
 
       {/* Tabs */}
-      <div className="border-b border-theme-border">
+      <div className="border-b border-theme">
         <div className="flex gap-4">
           {tabs.map(tab => (
             <button
@@ -185,7 +185,7 @@ export const CampaignDetail: React.FC<CampaignDetailProps> = ({ campaignId }) =>
             <div className="card-theme overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-theme-border">
+                  <tr className="border-b border-theme">
                     <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Date</th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Channel</th>
                     <th className="text-right px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Impressions</th>

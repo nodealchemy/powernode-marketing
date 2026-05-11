@@ -9,7 +9,7 @@ interface CampaignStatusBadgeProps {
 const STATUS_CONFIG: Record<CampaignStatus, { label: string; classes: string }> = {
   draft: {
     label: 'Draft',
-    classes: 'bg-theme-surface text-theme-secondary border border-theme-border',
+    classes: 'bg-theme-surface text-theme-secondary border border-theme',
   },
   scheduled: {
     label: 'Scheduled',

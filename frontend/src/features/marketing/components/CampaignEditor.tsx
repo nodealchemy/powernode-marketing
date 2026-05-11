@@ -174,7 +174,7 @@ export const CampaignEditor: React.FC<CampaignEditorProps> = ({
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors ${
                   formData.channels.includes(ch.value)
                     ? 'bg-theme-primary text-theme-on-primary border-transparent'
-                    : 'bg-theme-surface text-theme-secondary border-theme-border hover:bg-theme-surface-hover'
+                    : 'bg-theme-surface text-theme-secondary border-theme hover:bg-theme-surface-hover'
                 }`}
               >
                 {ch.label}
@@ -213,7 +213,7 @@ export const CampaignEditor: React.FC<CampaignEditorProps> = ({
       </div>
 
       {/* Actions */}
-      <div className="flex justify-end gap-3 pt-4 border-t border-theme-border">
+      <div className="flex justify-end gap-3 pt-4 border-t border-theme">
         <button type="button" onClick={onCancel} className="btn-theme btn-theme-secondary">
           Cancel
         </button>

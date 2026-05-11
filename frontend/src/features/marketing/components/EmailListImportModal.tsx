@@ -54,7 +54,7 @@ export const EmailListImportModal: React.FC<EmailListImportModalProps> = ({ onIm
           {/* File Drop Zone */}
           <div
             onClick={() => fileInputRef.current?.click()}
-            className="border-2 border-dashed border-theme-border rounded-lg p-8 text-center cursor-pointer hover:border-theme-primary transition-colors"
+            className="border-2 border-dashed border-theme rounded-lg p-8 text-center cursor-pointer hover:border-theme-primary transition-colors"
           >
             {selectedFile ? (
               <div className="flex items-center justify-center gap-2">

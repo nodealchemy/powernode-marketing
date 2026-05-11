@@ -102,7 +102,7 @@ export const CampaignROIChart: React.FC<CampaignROIChartProps> = ({ statistics, 
       </div>
 
       {/* Campaign Breakdown */}
-      <div className="mt-6 pt-4 border-t border-theme-border">
+      <div className="mt-6 pt-4 border-t border-theme">
         <h4 className="text-sm font-medium text-theme-primary mb-3">Campaign Breakdown</h4>
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>

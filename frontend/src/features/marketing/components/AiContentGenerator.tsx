@@ -107,7 +107,7 @@ export const AiContentGenerator: React.FC<AiContentGeneratorProps> = ({
       )}
 
       {result && (
-        <div className="space-y-4 pt-4 border-t border-theme-border">
+        <div className="space-y-4 pt-4 border-t border-theme">
           <div>
             <div className="flex items-center justify-between mb-1">
               <label className="text-sm font-medium text-theme-primary">Subject / Headline</label>

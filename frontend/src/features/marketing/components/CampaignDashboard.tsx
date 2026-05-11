@@ -214,7 +214,7 @@ export const CampaignDashboard: React.FC = () => {
         <div className="card-theme overflow-hidden">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-theme-border">
+              <tr className="border-b border-theme">
                 <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Name</th>
                 <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Type</th>
                 <th className="text-left px-4 py-3 text-xs font-medium text-theme-secondary uppercase">Status</th>

@@ -61,7 +61,7 @@ export const ConnectSocialModal: React.FC<ConnectSocialModalProps> = ({ onConnec
                   className={`flex flex-col items-center gap-1.5 p-3 rounded-lg border transition-colors ${
                     selectedPlatform === p.value
                       ? 'border-theme-primary bg-theme-primary bg-opacity-5'
-                      : 'border-theme-border hover:bg-theme-surface-hover'
+                      : 'border-theme hover:bg-theme-surface-hover'
                   }`}
                 >
                   <p.icon className={`w-6 h-6 ${

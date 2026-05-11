@@ -125,7 +125,7 @@ export const EmailListManager: React.FC = () => {
               id="double-opt-in"
               checked={formData.double_opt_in}
               onChange={(e) => setFormData(prev => ({ ...prev, double_opt_in: e.target.checked }))}
-              className="rounded border-theme-border"
+              className="rounded border-theme"
             />
             <label htmlFor="double-opt-in" className="text-sm text-theme-secondary">
               Require double opt-in
@@ -191,7 +191,7 @@ export const EmailListManager: React.FC = () => {
                   </button>
                 </div>
               </div>
-              <div className="flex items-center gap-4 mt-3 pt-3 border-t border-theme-border">
+              <div className="flex items-center gap-4 mt-3 pt-3 border-t border-theme">
                 <div className="flex items-center gap-1">
                   <Users className="w-3.5 h-3.5 text-theme-tertiary" />
                   <span className="text-xs text-theme-secondary">{list.subscriber_count} subscribers</span>

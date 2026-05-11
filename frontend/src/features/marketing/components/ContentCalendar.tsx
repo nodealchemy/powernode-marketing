@@ -134,7 +134,7 @@ export const ContentCalendar: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex rounded-lg border border-theme-border overflow-hidden">
+          <div className="flex rounded-lg border border-theme overflow-hidden">
             <button
               onClick={() => setViewMode('month')}
               className={`px-3 py-1.5 text-sm ${
@@ -158,7 +158,7 @@ export const ContentCalendar: React.FC = () => {
       {/* Calendar Grid */}
       <div className="card-theme overflow-hidden">
         {/* Day Headers */}
-        <div className="grid grid-cols-7 border-b border-theme-border">
+        <div className="grid grid-cols-7 border-b border-theme">
           {dayNames.map(day => (
             <div key={day} className="px-2 py-2 text-center text-xs font-medium text-theme-secondary uppercase">
               {day}
@@ -177,7 +177,7 @@ export const ContentCalendar: React.FC = () => {
             return (
               <div
                 key={i}
-                className={`min-h-[100px] border-b border-r border-theme-border p-1.5 ${
+                className={`min-h-[100px] border-b border-r border-theme p-1.5 ${
                   !isCurrentMonth ? 'bg-theme-surface bg-opacity-50' : ''
                 }`}
                 onClick={() => { setSelectedDate(dateKey); setShowCreateForm(true); }}
