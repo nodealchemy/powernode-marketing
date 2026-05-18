@@ -182,6 +182,32 @@ export const FeaturesPage: React.FC = () => {
                 <strong className="text-theme-secondary">SDWAN Topology</strong> — IPv6 overlay networks, iBGP routing, cross-instance federation, per-network peer + firewall + VIP + port-mapping drill-down.
               </figcaption>
             </figure>
+            <figure>
+              <img
+                src="/screenshots/ai-agents.png"
+                alt="Powernode AI Agents page showing a list of 9 active agents with their provider, model, status, and last run timestamp"
+                className="rounded-2xl border border-theme shadow-2xl w-full"
+                width={1920}
+                height={1080}
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-sm text-theme-tertiary text-center">
+                <strong className="text-theme-secondary">AI Agents</strong> — fleet of agents with per-agent trust score, model + provider, last-run telemetry. Filter by type, status, or last-run window; drill down per agent for cards, autonomy posture, and community sharing.
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/screenshots/ai-knowledge.png"
+                alt="Powernode Knowledge page showing agent memory pools (Working Memory + Reference Memory) for each agent, with entry counts and size"
+                className="rounded-2xl border border-theme shadow-2xl w-full"
+                width={1920}
+                height={1080}
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-sm text-theme-tertiary text-center">
+                <strong className="text-theme-secondary">Knowledge</strong> — per-agent persistent contexts (working + reference memory), RAG knowledge bases, the platform-wide knowledge graph, memory tiers, and compound learning all in one place.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>

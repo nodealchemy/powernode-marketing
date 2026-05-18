@@ -1,6 +1,6 @@
 # Screenshots TODO — Phase B2 F1
 
-Status (2026-05-17): **3 of 6 captures shipped** to `frontend/public/screenshots/`
+Status (2026-05-18): **5 of 7 captures shipped** to `frontend/public/screenshots/`
 and wired into the marketing site via [`scripts/capture-marketing-screenshots.js`](../../../../scripts/capture-marketing-screenshots.js).
 
 | Asset | Status | Where it landed |
@@ -8,11 +8,11 @@ and wired into the marketing site via [`scripts/capture-marketing-screenshots.js
 | Fleet Dashboard | ✅ shipped | FeaturesPage "See it in action" |
 | Template Composer | ✅ shipped | FeaturesPage "See it in action" |
 | SDWAN topology | ✅ shipped | FeaturesPage "See it in action" |
-| Knowledge Graph | ⛔ **blocked on data hygiene** — dev DB contains private trading-extension contexts ("Trading Session Analyst Experiential Memory"). Re-capture after seeding a clean demo account. |
-| AI Agents | ⛔ **blocked on data hygiene** — dev DB contains "Daily P&L Coordinator" (trading-leaking agent name). Re-capture after seeding a clean demo account. |
+| AI Agents | ✅ shipped | FeaturesPage "See it in action" — captured via demo@powernode.org against the clean Demo Company account (no trading-extension leak) |
+| Knowledge (agent memory pools) | ✅ shipped | FeaturesPage "See it in action" — same clean-demo strategy |
 | Boot Replay viewer | TODO — needs a recorded boot session in the dev DB |
 | AI Concierge panel | TODO — panel is rendered on-demand inside other pages; capture script needs to click the open trigger first |
-| OG card (1200×630) | TODO — referenced in `frontend/public/index.html`; needs design + commit |
+| OG card (1200×630) | TODO — referenced in `frontend/index.html` (NOT `public/index.html` — that's the unused CRA leftover); needs design + commit |
 
 ## Re-running the capture script
 
@@ -45,21 +45,40 @@ either:
 
 ## Already-shipped captures (rerun with the script)
 
-| Asset | Route | Embedded at |
-|-------|-------|-------------|
-| Fleet Dashboard | `/app/system/fleet` | FeaturesPage — "See it in action" |
-| Template Composer | `/app/system/templates/compose` | FeaturesPage — "See it in action" |
-| SDWAN Topology | `/app/system/sdwan` | FeaturesPage — "See it in action" |
-| Marketing HomePage (for social shares) | `/` | Not embedded; available at `/screenshots/marketing-homepage.png` for OG/social use |
-| Marketing FeaturesPage (for social shares) | `/features` | Not embedded; available at `/screenshots/marketing-features.png` |
-| Marketing PricingPage (for social shares) | `/pricing` | Not embedded; available at `/screenshots/marketing-pricing.png` |
+| Asset | Route | Login as | Embedded at |
+|-------|-------|----------|-------------|
+| Fleet Dashboard | `/app/system/fleet` | admin | FeaturesPage — "See it in action" |
+| Template Composer | `/app/system/templates/compose` | admin | FeaturesPage — "See it in action" |
+| SDWAN Topology | `/app/system/sdwan` | admin | FeaturesPage — "See it in action" |
+| AI Agents | `/app/ai/agents` | **demo** | FeaturesPage — "See it in action" |
+| Knowledge | `/app/ai/knowledge` | **demo** | FeaturesPage — "See it in action" |
+| Marketing HomePage (for social shares) | `/` | — | Not embedded; available at `/screenshots/marketing-homepage.png` for OG/social use |
+| Marketing FeaturesPage (for social shares) | `/features` | — | Not embedded; available at `/screenshots/marketing-features.png` |
+| Marketing PricingPage (for social shares) | `/pricing` | — | Not embedded; available at `/screenshots/marketing-pricing.png` |
+
+## Demo data seed
+
+The AI Agents + Knowledge captures depend on
+[`extensions/marketing/server/db/seeds/marketing_demo_data_seed.rb`](../../server/db/seeds/marketing_demo_data_seed.rb)
+having been run. It seeds 9 generic agents + 18 persistent contexts + 54
+context entries into the existing **Demo Company** account
+(`demo@powernode.org`). All content is intentionally non-trading so it's
+safe for public-facing marketing per
+`feedback_no_private_extension_names_in_public_docs`.
+
+Re-run:
+
+```sh
+cd server
+bundle exec rails runner "load Rails.root.join('../extensions/marketing/server/db/seeds/marketing_demo_data_seed.rb')"
+```
+
+Idempotent: `find_or_create_by!` everywhere; re-running adds nothing new.
 
 ## Still-TODO captures
 
 | Asset | Where to capture from | Where to embed | Blocker |
 |-------|------------------------|----------------|---------|
-| **Knowledge graph visualizer** (~20-node subgraph) | `/app/ai/knowledge` → Knowledge Graph tab | HomePage above-fold or FeaturesPage near "Knowledge graph context" card | Seed a clean demo account (no trading data) |
-| **AI Agents overview** | `/app/ai/agents` | FeaturesPage near "Compound learning loop" | Seed a clean demo account |
 | **Boot Replay viewer** with a smoke boot timeline | `/app/system/instances/<id>/boot-replay` | FeaturesPage near "Fleet substrate" card | Boot replay needs a recorded smoke session in DB |
 | **AI Concierge chat** with the system extension agent answering an operational question | Open Concierge panel from any `/app/system/*` page | HomePage hero or new "Talk to it" section | Capture script needs to click the panel open trigger first |
 
