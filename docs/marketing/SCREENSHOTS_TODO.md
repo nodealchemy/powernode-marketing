@@ -1,23 +1,67 @@
 # Screenshots TODO — Phase B2 F1
 
-Operator-side task: capture the screenshots referenced in the
-[`AUDIT_2026-05-17.md`](./AUDIT_2026-05-17.md) §6 asset gap list, then
-wire them into the marketing pages.
+Status (2026-05-17): **3 of 6 captures shipped** to `frontend/public/screenshots/`
+and wired into the marketing site via [`scripts/capture-marketing-screenshots.js`](../../../../scripts/capture-marketing-screenshots.js).
 
-Phase B2 left placeholders in the marketing copy (no `<img>` tags yet
-since the asset captures need a running platform). This doc lists what
-to capture so a maintainer can execute the F1 option from the audit.
+| Asset | Status | Where it landed |
+|-------|--------|------------------|
+| Fleet Dashboard | ✅ shipped | FeaturesPage "See it in action" |
+| Template Composer | ✅ shipped | FeaturesPage "See it in action" |
+| SDWAN topology | ✅ shipped | FeaturesPage "See it in action" |
+| Knowledge Graph | ⛔ **blocked on data hygiene** — dev DB contains private trading-extension contexts ("Trading Session Analyst Experiential Memory"). Re-capture after seeding a clean demo account. |
+| AI Agents | ⛔ **blocked on data hygiene** — dev DB contains "Daily P&L Coordinator" (trading-leaking agent name). Re-capture after seeding a clean demo account. |
+| Boot Replay viewer | TODO — needs a recorded boot session in the dev DB |
+| AI Concierge panel | TODO — panel is rendered on-demand inside other pages; capture script needs to click the open trigger first |
+| OG card (1200×630) | TODO — referenced in `frontend/public/index.html`; needs design + commit |
 
-## Required captures
+## Re-running the capture script
 
-| Asset | Where to capture from | Where to embed |
-|-------|------------------------|----------------|
-| **Fleet Dashboard** with active event feed + correlation chain | `/app/system/fleet` while a smoke or training session is running | FeaturesPage — beside "Fleet management" card |
-| **Template Composer** with a multi-module template in flight | `/app/system/templates/compose` after adding 3+ modules | FeaturesPage — beside "MCP-native runtime" or new section |
-| **SDWAN UI** showing a peer with VIP failover + route policies | `/app/system/sdwan/networks/<id>` | FeaturesPage — beside "SDWAN + WireGuard mesh" card |
-| **Boot Replay viewer** showing a smoke boot timeline | `/app/system/instances/<id>/boot-replay` | FeaturesPage — beside "Compound learning loop" or new "Operator UX" section |
-| **AI Concierge chat** with the system extension agent answering an operational question | `/app/ai/concierge` | HomePage hero or new "Talk to it" section |
-| **Knowledge graph visualizer** showing a small subgraph (~20 nodes) | `/app/ai/knowledge-graph` (if shipped) or `platform.get_subgraph` output rendered separately | HomePage above-fold or FeaturesPage near "Knowledge graph context" card |
+```sh
+node scripts/capture-marketing-screenshots.js
+```
+
+Defaults to `http://localhost:3001` (the systemd-managed frontend dev server).
+Override with `POWERNODE_BASE_URL=...`. Admin credentials default to the
+seeded `admin@powernode.org` user; override with `POWERNODE_ADMIN_EMAIL`
+and `POWERNODE_ADMIN_PASSWORD` env vars.
+
+## Private-extension safety
+
+Before adding any operator-UX page to `CAPTURES` in the script, verify the
+page does NOT render data from private extensions (trading, business).
+The current dev DB has trading-related agent names + memory contexts that
+must not appear in marketing assets per
+`feedback_no_private_extension_names_in_public_docs`.
+
+If a page mixes useful operator content with private-extension data,
+either:
+1. Seed a clean demo account first (preferred — gets re-usable demo data
+   for all future captures)
+2. Crop the screenshot post-capture to exclude private content
+3. Skip the page from the public marketing site (current approach for
+   Knowledge + AI Agents)
+
+## What we deliberately don't capture for marketing
+
+## Already-shipped captures (rerun with the script)
+
+| Asset | Route | Embedded at |
+|-------|-------|-------------|
+| Fleet Dashboard | `/app/system/fleet` | FeaturesPage — "See it in action" |
+| Template Composer | `/app/system/templates/compose` | FeaturesPage — "See it in action" |
+| SDWAN Topology | `/app/system/sdwan` | FeaturesPage — "See it in action" |
+| Marketing HomePage (for social shares) | `/` | Not embedded; available at `/screenshots/marketing-homepage.png` for OG/social use |
+| Marketing FeaturesPage (for social shares) | `/features` | Not embedded; available at `/screenshots/marketing-features.png` |
+| Marketing PricingPage (for social shares) | `/pricing` | Not embedded; available at `/screenshots/marketing-pricing.png` |
+
+## Still-TODO captures
+
+| Asset | Where to capture from | Where to embed | Blocker |
+|-------|------------------------|----------------|---------|
+| **Knowledge graph visualizer** (~20-node subgraph) | `/app/ai/knowledge` → Knowledge Graph tab | HomePage above-fold or FeaturesPage near "Knowledge graph context" card | Seed a clean demo account (no trading data) |
+| **AI Agents overview** | `/app/ai/agents` | FeaturesPage near "Compound learning loop" | Seed a clean demo account |
+| **Boot Replay viewer** with a smoke boot timeline | `/app/system/instances/<id>/boot-replay` | FeaturesPage near "Fleet substrate" card | Boot replay needs a recorded smoke session in DB |
+| **AI Concierge chat** with the system extension agent answering an operational question | Open Concierge panel from any `/app/system/*` page | HomePage hero or new "Talk to it" section | Capture script needs to click the panel open trigger first |
 
 ## Capture recommendations
 

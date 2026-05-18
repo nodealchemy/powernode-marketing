@@ -131,6 +131,61 @@ export const FeaturesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* See it in action — operator-UX screenshots */}
+      <section className="py-16 bg-theme-background-secondary">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-theme-primary mb-3">
+              See it in action
+            </h2>
+            <p className="text-lg text-theme-secondary max-w-2xl mx-auto leading-relaxed">
+              Operator surfaces captured live from a running platform.
+            </p>
+          </div>
+          <div className="space-y-12">
+            <figure>
+              <img
+                src="/screenshots/fleet-dashboard.png"
+                alt="Powernode Fleet Dashboard showing live signal counts, dispatch pipeline, and a streaming event feed with correlation chains"
+                className="rounded-2xl border border-theme shadow-2xl w-full"
+                width={1920}
+                height={1080}
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-sm text-theme-tertiary text-center">
+                <strong className="text-theme-secondary">Fleet Dashboard</strong> — live event feed with severity badges, dispatch pipeline counters, correlation chain inspector. The autonomy decision loop, made observable.
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/screenshots/template-composer.png"
+                alt="Powernode Template Composer showing a module catalog on the left and an empty composition panel on the right ready for drag-and-drop"
+                className="rounded-2xl border border-theme shadow-2xl w-full"
+                width={1920}
+                height={1080}
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-sm text-theme-tertiary text-center">
+                <strong className="text-theme-secondary">Template Composer</strong> — drag modules from the catalog into a composition. Conflict detection + footprint estimate live as you compose.
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/screenshots/sdwan-overview.png"
+                alt="Powernode SDWAN topology view showing a network of federated peers with active bridges and route policies"
+                className="rounded-2xl border border-theme shadow-2xl w-full"
+                width={1920}
+                height={1080}
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-sm text-theme-tertiary text-center">
+                <strong className="text-theme-secondary">SDWAN Topology</strong> — IPv6 overlay networks, iBGP routing, cross-instance federation, per-network peer + firewall + VIP + port-mapping drill-down.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       {/* Three-tier architecture pillars */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
