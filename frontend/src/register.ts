@@ -9,9 +9,9 @@ const MarketingEmailListsPage = lazy(() => import('./features/marketing/pages/Ma
 const MarketingSocialPage = lazy(() => import('./features/marketing/pages/MarketingSocialPage').then(m => ({ default: m.MarketingSocialPage })));
 const MarketingAnalyticsPage = lazy(() => import('./features/marketing/pages/MarketingAnalyticsPage').then(m => ({ default: m.MarketingAnalyticsPage })));
 
-// Lazy-loaded PUBLIC marketing page components (rendered at root domain, no auth)
+// Lazy-loaded PUBLIC marketing page components (rendered at root domain, no auth).
+// Pricing is intentionally NOT here — it lives in the business extension at /pricing.
 const HomePage = lazy(() => import('./features/marketing/public/HomePage').then(m => ({ default: m.HomePage })));
-const PricingPage = lazy(() => import('./features/marketing/public/PricingPage').then(m => ({ default: m.PricingPage })));
 const FeaturesPage = lazy(() => import('./features/marketing/public/FeaturesPage').then(m => ({ default: m.FeaturesPage })));
 const BlogIndexPage = lazy(() => import('./features/marketing/public/BlogIndexPage').then(m => ({ default: m.BlogIndexPage })));
 const BlogPostPage = lazy(() => import('./features/marketing/public/BlogPostPage').then(m => ({ default: m.BlogPostPage })));
@@ -22,7 +22,6 @@ export function register(): void {
   // These override App.tsx defaults like the `/` -> `/welcome` redirect when present.
   featureRegistry.registerPublicRoutes('marketing', [
     { path: '/', component: HomePage },
-    { path: '/pricing', component: PricingPage },
     { path: '/features', component: FeaturesPage },
     { path: '/blog', component: BlogIndexPage },
     { path: '/blog/:slug', component: BlogPostPage },
