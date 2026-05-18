@@ -9,7 +9,7 @@ const mainNav = [
   { label: 'Docs', path: '/docs' },
 ];
 
-const GITHUB_BASE = 'https://github.com/rett/powernode-platform/blob/develop';
+const GITHUB_BASE = 'https://github.com/nodealchemy/powernode-platform/blob/develop';
 
 interface DocSection {
   icon: React.ComponentType<{ className?: string }>;
@@ -59,7 +59,7 @@ const SECTIONS: DocSection[] = [
     links: [
       { label: 'AI Orchestration Guide', path: 'docs/platform/AI_ORCHESTRATION_GUIDE.md' },
       { label: 'Agent Autonomy Guide', path: 'docs/platform/AGENT_AUTONOMY_GUIDE.md' },
-      { label: 'MCP Tool Catalog', path: 'docs/platform/MCP_TOOL_CATALOG.md', description: '430+ tool actions across 57 classes.' },
+      { label: 'MCP Tool Catalog', path: 'docs/platform/MCP_TOOL_CATALOG.md', description: '525 tool actions across 60 classes.' },
       { label: 'Memory System Architecture', path: 'docs/platform/MEMORY_SYSTEM_ARCHITECTURE.md' },
       { label: 'Knowledge Graph & RAG', path: 'docs/platform/RAG_SYSTEM_GUIDE.md' },
     ],

@@ -1,12 +1,25 @@
 # Powernode Marketing Extension
 
-Marketing campaigns, content calendar, email lists, social media management, and campaign analytics — wired into the [Powernode platform](https://github.com/nodealchemy/powernode-platform) via the extension contract.
+Two distinct surfaces in one extension:
 
-This repository is mounted into the platform as a submodule at `extensions/marketing/`. It can be developed independently — the platform consumes it via the standard extension contract.
+1. **Public-facing marketing site** — served from `frontend/src/features/marketing/public/`. The homepage, features, pricing, blog, and docs landing pages that visitors see at `powernode.org` (and that the [`docs/marketing/AUDIT_2026-05-17.md`](./docs/marketing/AUDIT_2026-05-17.md) audit covers).
+2. **Marketing automation operator app** — campaign management, content calendar, email lists, social scheduling, analytics. Lives in `frontend/src/features/marketing/pages/` + `frontend/src/features/marketing/components/`. Used by marketing operators inside the platform.
+
+Wired into the [Powernode platform](https://github.com/nodealchemy/powernode-platform) via the extension contract. This repository is mounted into the platform as a submodule at `extensions/marketing/`.
 
 ---
 
 ## What this extension provides
+
+### Public-facing site
+
+- **HomePage** — hero, value pillars, "Spawn a platform" federation section, self-host vs Cloud, waitlist
+- **FeaturesPage** — 14 feature cards, three-tier architecture pillars, comparison vs observability platforms
+- **PricingPage** — Free / Pro / Team / Enterprise tiers + FAQ
+- **BlogIndexPage + BlogPostPage** — reads from `::Page` model where `meta_keywords` includes `"blog"`
+- **DocsLandingPage** — curated entry points into the open-source documentation
+
+### Marketing automation operator app
 
 - **Campaign management** — plan, schedule, and track marketing campaigns across channels
 - **Content calendar** — coordinate publication timelines for blog posts, emails, social posts

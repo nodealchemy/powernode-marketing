@@ -143,7 +143,7 @@ export const PricingPage: React.FC = () => {
             Optional commercial license + premium support contracts available for procurement-friendly buyers.
           </p>
           <a
-            href="https://github.com/rett/powernode-system"
+            href="https://github.com/nodealchemy/powernode-system"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 px-6 py-3 bg-theme-surface hover:bg-theme-background text-theme-primary font-semibold rounded-xl border border-theme transition-all duration-200"

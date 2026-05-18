@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldAlert, Network, Workflow, Plug, ArrowRight, Star } from 'lucide-react';
+import {
+  ShieldAlert, Network, Workflow, Plug, ArrowRight, Star,
+  Server, Globe,
+} from 'lucide-react';
 
 import { PublicPageContainer } from '@/shared/components/layout/PublicPageContainer';
 
@@ -43,7 +46,7 @@ export const HomePage: React.FC = () => {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="https://github.com/rett/powernode-system"
+              href="https://github.com/nodealchemy/powernode-system"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 px-8 py-4 bg-theme-surface hover:bg-theme-background-secondary text-theme-primary font-semibold rounded-xl border border-theme transition-all duration-200"
@@ -68,7 +71,7 @@ export const HomePage: React.FC = () => {
               Powernode is the layer that decides what they're <em>allowed to do next</em>.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
               <div className="w-12 h-12 mb-4 rounded-xl bg-theme-danger flex items-center justify-center">
                 <ShieldAlert className="w-6 h-6 text-white" />
@@ -85,8 +88,8 @@ export const HomePage: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">Knowledge graph for context</h3>
               <p className="text-theme-secondary text-sm leading-relaxed">
-                71,824 nodes of structured context, semantic navigation, blast-radius analysis. Your agents
-                stop hallucinating; they look it up.
+                91,000+ nodes of structured context (81,000+ edges), semantic navigation, blast-radius analysis.
+                Your agents stop hallucinating; they look it up.
               </p>
             </div>
             <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
@@ -105,11 +108,77 @@ export const HomePage: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">MCP-native runtime</h3>
               <p className="text-theme-secondary text-sm leading-relaxed">
-                280+ MCP tool actions out of the box. Permission-gated. Adapters for Claude Agent SDK,
-                LangGraph, Mastra. Production-grade catalog.
+                525 MCP tool actions across 60 tool classes out of the box. Permission-gated. Adapters for
+                Claude Agent SDK, LangGraph, Mastra. Production-grade catalog.
+              </p>
+            </div>
+            <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
+              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-info flex items-center justify-center">
+                <Server className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-theme-primary mb-3">Fleet substrate underneath</h3>
+              <p className="text-theme-secondary text-sm leading-relaxed">
+                Most agent platforms stop at the conversation. Powernode goes all the way down — bare-metal, VM,
+                and container lifecycle. Multi-arch initramfs, Cosign + SLSA L3+ supply chain, SDWAN overlay.
+              </p>
+            </div>
+            <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
+              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-success flex items-center justify-center">
+                <Globe className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-theme-primary mb-3">Federation, built in</h3>
+              <p className="text-theme-secondary text-sm leading-relaxed">
+                Spawn a fully-federated child platform in one click. Sovereign auth, per-peer data residency,
+                WORM audit shipping, multi-hop migration chains. Multi-region SaaS without the platform tax.
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Spawn a platform — federation story */}
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4">
+              Spawn a fully-federated platform in <em className="not-italic text-theme-info-solid">one click</em>
+            </h2>
+            <p className="text-xl text-theme-secondary max-w-3xl mx-auto leading-relaxed">
+              Most platforms make you stand each region up by hand. Pick a spawn mode, click Spawn — the child
+              boots already federated with the parent. No out-of-band token exchange ritual.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 bg-theme-background rounded-xl border border-theme">
+              <div className="text-xs font-semibold text-theme-info-solid tracking-wider uppercase mb-2">Mode 1</div>
+              <h3 className="text-xl font-bold text-theme-primary mb-3">Managed child</h3>
+              <p className="text-theme-secondary text-sm leading-relaxed">
+                Parent retains operator-scope grant on the child (read/write/admin, 365-day TTL). Single-pane
+                administration. Child operator can revoke any time — "emancipation" downgrades to peer.
+              </p>
+            </div>
+            <div className="p-6 bg-theme-background rounded-xl border border-theme">
+              <div className="text-xs font-semibold text-theme-info-solid tracking-wider uppercase mb-2">Mode 2</div>
+              <h3 className="text-xl font-bold text-theme-primary mb-3">Autonomous peer</h3>
+              <p className="text-theme-secondary text-sm leading-relaxed">
+                Provisioning convenience without ongoing privilege. Once the handshake completes, both
+                platforms are equal peers — no auto-grants. For partner platforms, customer deployments.
+              </p>
+            </div>
+            <div className="p-6 bg-theme-background rounded-xl border border-theme">
+              <div className="text-xs font-semibold text-theme-info-solid tracking-wider uppercase mb-2">Mode 3</div>
+              <h3 className="text-xl font-bold text-theme-primary mb-3">HA cluster member</h3>
+              <p className="text-theme-secondary text-sm leading-relaxed">
+                Child runs a Postgres physical replication slot streaming from the parent's primary. Horizontal
+                scale + warm standby. Failover preserves federation state because the data <em>is</em> the same.
+              </p>
+            </div>
+          </div>
+          <p className="mt-10 text-center text-sm text-theme-tertiary max-w-2xl mx-auto leading-relaxed">
+            Plus P9.x guarantees: schema-version negotiation, per-peer WORM audit shipping, data residency
+            enforcement at federation-aware boundaries, and multi-hop migration chains with operator gates at
+            each hop.
+          </p>
         </div>
       </section>
 
@@ -131,7 +200,7 @@ export const HomePage: React.FC = () => {
                 community-supported. Bring your own ops.
               </p>
               <a
-                href="https://github.com/rett/powernode-system"
+                href="https://github.com/nodealchemy/powernode-system"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 text-theme-info-solid font-semibold hover:underline"
