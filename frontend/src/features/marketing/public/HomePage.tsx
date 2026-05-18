@@ -29,7 +29,7 @@ export const HomePage: React.FC = () => {
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8 text-theme-primary">
             Mission control for<br />
-            <span className="bg-gradient-to-r from-theme-info-solid to-theme-interactive-primary-hover bg-clip-text text-transparent">
+            <span className="text-theme-info-solid">
               AI agent fleets
             </span>
           </h1>
@@ -38,8 +38,8 @@ export const HomePage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              to="/plans"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-theme-info hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              to="/pricing"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-theme-info-solid hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
               data-testid="hero-cta-cloud"
             >
               <span>Try the Cloud — Free</span>
@@ -73,7 +73,7 @@ export const HomePage: React.FC = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
-              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-danger flex items-center justify-center">
+              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-error-solid flex items-center justify-center">
                 <ShieldAlert className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">Kill switch + intervention policies</h3>
@@ -83,7 +83,7 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
             <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
-              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-info flex items-center justify-center">
+              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-info-solid flex items-center justify-center">
                 <Network className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">Knowledge graph for context</h3>
@@ -93,7 +93,7 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
             <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
-              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-success flex items-center justify-center">
+              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-success-solid flex items-center justify-center">
                 <Workflow className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">Stigmergic coordination</h3>
@@ -103,7 +103,7 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
             <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
-              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-warning flex items-center justify-center">
+              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-warning-solid flex items-center justify-center">
                 <Plug className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">MCP-native runtime</h3>
@@ -113,7 +113,7 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
             <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
-              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-info flex items-center justify-center">
+              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-info-solid flex items-center justify-center">
                 <Server className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">Fleet substrate underneath</h3>
@@ -123,7 +123,7 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
             <div className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200">
-              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-success flex items-center justify-center">
+              <div className="w-12 h-12 mb-4 rounded-xl bg-theme-success-solid flex items-center justify-center">
                 <Globe className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">Federation, built in</h3>
@@ -137,7 +137,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Spawn a platform — federation story */}
-      <section className="py-24">
+      <section className="py-24 bg-theme-background-secondary">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4">
@@ -192,7 +192,7 @@ export const HomePage: React.FC = () => {
             Same code, two deployments. The OSS gives you the same powernode we run; the Cloud gives you our ops.
           </p>
           <div className="grid md:grid-cols-2 gap-8 text-left">
-            <div className="p-8 bg-theme-background rounded-2xl border border-theme">
+            <div className="p-8 bg-theme-surface rounded-2xl border border-theme shadow-md">
               <div className="text-sm font-semibold text-theme-tertiary tracking-wider uppercase mb-2">Free Forever</div>
               <h3 className="text-2xl font-bold text-theme-primary mb-4">Self-host</h3>
               <p className="text-theme-secondary leading-relaxed mb-6">
@@ -209,7 +209,7 @@ export const HomePage: React.FC = () => {
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <div className="p-8 bg-theme-info/5 rounded-2xl border-2 border-theme-info-solid">
+            <div className="p-8 bg-theme-info/5 rounded-2xl border-2 border-theme-info-solid shadow-md">
               <div className="text-sm font-semibold text-theme-info-solid tracking-wider uppercase mb-2">Free → Pro → Team</div>
               <h3 className="text-2xl font-bold text-theme-primary mb-4">Cloud</h3>
               <p className="text-theme-secondary leading-relaxed mb-6">
@@ -217,7 +217,7 @@ export const HomePage: React.FC = () => {
                 cross-region federation. Free tier for evaluation.
               </p>
               <Link
-                to="/plans"
+                to="/pricing"
                 className="inline-flex items-center space-x-2 text-theme-info-solid font-semibold hover:underline"
               >
                 <span>View pricing</span>

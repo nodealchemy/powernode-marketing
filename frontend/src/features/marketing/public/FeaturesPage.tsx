@@ -18,85 +18,85 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: <ShieldAlert className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-danger',
+    iconBg: 'bg-theme-error-solid',
     title: 'Kill switch + intervention policies',
     description: 'Trust-scored agents with per-action approval chains, collusion detection, and platform-wide emergency halt. Audit trails for every decision.',
   },
   {
     icon: <Network className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-info',
+    iconBg: 'bg-theme-info-solid',
     title: 'Knowledge graph context',
     description: '91,000+ nodes of structured context with 81,000+ edges. Semantic navigation, blast-radius analysis, feature hub linking. Your agents stop hallucinating; they look it up.',
   },
   {
     icon: <Workflow className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-success',
+    iconBg: 'bg-theme-success-solid',
     title: 'Stigmergic coordination',
     description: 'Agents leave pressure signals on a shared bus for other agents (or other extensions) to perceive. Multi-agent systems coordinate without scheduler or messaging — and cross-domain throttling falls out for free.',
   },
   {
     icon: <Plug className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-warning',
+    iconBg: 'bg-theme-warning-solid',
     title: 'MCP-native runtime',
     description: '525 MCP tool actions across 60 tool classes out of the box. Permission-gated. Adapters for Claude Agent SDK, LangGraph, Mastra. Production-grade catalog.',
   },
   {
     icon: <Server className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-info',
+    iconBg: 'bg-theme-info-solid',
     title: 'Fleet management',
     description: 'Bare-metal, VM, and container lifecycle. Multi-arch boot (amd64 + arm64). Pre-warmed instance pools with atomic claim. Cosign + SLSA L3+ signed module supply chain.',
   },
   {
     icon: <Lock className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-danger',
+    iconBg: 'bg-theme-error-solid',
     title: 'mTLS + Vault PKI',
     description: 'Internal CA with mTLS enrollment, automatic certificate rotation, OCI image verification with cosign + fs-verity. Zero-trust between agents.',
   },
   {
     icon: <Activity className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-success',
+    iconBg: 'bg-theme-success-solid',
     title: 'Compound learning loop',
     description: 'System gets better over time. Auto-evolves a new skill after 3 matching learnings. Built-in decay, reinforcement, contradiction resolution. Every operator confirm/reject feeds back into the autonomy reasoner.',
   },
   {
     icon: <GitBranch className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-info',
+    iconBg: 'bg-theme-info-solid',
     title: 'GitOps drift detection',
     description: 'Declare fleet state in fleet.yaml; reconciler opens an approval proposal per diff. Auto-apply for trusted repos. Drift back-pressure when reality diverges from git source-of-truth.',
   },
   {
     icon: <Cpu className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-warning',
+    iconBg: 'bg-theme-warning-solid',
     title: 'Ralph loops',
     description: 'Sidekiq-style autonomous task execution for agents. Schedule recurring duty cycles, perceive signals, take actions, log decisions.',
   },
   {
     icon: <Zap className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-success',
+    iconBg: 'bg-theme-success-solid',
     title: 'SDWAN + WireGuard mesh',
     description: 'First-class virtual IPs, iBGP/FRR routing, JSONB route policies, federation peers, access grants. Tailscale UX with FRR routing depth.',
   },
   {
     icon: <Globe className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-info',
+    iconBg: 'bg-theme-info-solid',
     title: 'Multi-region federation',
     description: 'Spawn a fully-federated child platform in one click — pick managed-child, autonomous-peer, or HA cluster-member mode. Sovereign auth, per-peer data residency enforcement, WORM audit shipping, multi-hop migration chains with operator gates at each hop.',
   },
   {
     icon: <HardDrive className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-warning',
+    iconBg: 'bg-theme-warning-solid',
     title: 'Disk image CI publication',
     description: 'Custom OS images become a git push. Multi-arch (amd64 + arm64) initramfs + composefs + 6 artifact families (iPXE, raw, ISO, qcow2, OCI). Cosign-signed via Sigstore Fulcio, retention-managed, autonomous-agent promoted.',
   },
   {
     icon: <Bug className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-danger',
+    iconBg: 'bg-theme-error-solid',
     title: 'Honeypot canaries',
     description: 'Decoy modules with fake credentials and tempting ports. Any access fires honeypot.access_attempted → high-severity escalation through the standard intervention policy. Security defense in depth, out of the box.',
   },
   {
     icon: <Search className="w-6 h-6 text-white" />,
-    iconBg: 'bg-theme-info',
+    iconBg: 'bg-theme-info-solid',
     title: 'Codebase intelligence MCP',
     description: '14 MCP tools for semantic code search over 91,000+ KG nodes: blast-radius analysis, identifier search, file skeleton extraction, dead code detection. Agents navigate large codebases without hallucinating.',
   },
@@ -112,13 +112,13 @@ export const FeaturesPage: React.FC = () => {
         { label: 'Features', path: '/features' },
       ]}
     >
-      <section className="py-12">
+      <section className="py-12 bg-theme-background-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map(feature => (
               <div
                 key={feature.title}
-                className="p-8 bg-theme-background rounded-2xl border border-theme hover:border-theme-info-solid transition-all duration-200"
+                className="p-8 bg-theme-background rounded-2xl border border-theme shadow-md hover:shadow-lg hover:border-theme-info-solid transition-all duration-200"
               >
                 <div className={`w-12 h-12 mb-4 rounded-xl ${feature.iconBg} flex items-center justify-center`}>
                   {feature.icon}
@@ -213,7 +213,7 @@ export const FeaturesPage: React.FC = () => {
       </section>
 
       {/* Three-tier architecture pillars */}
-      <section className="py-16">
+      <section className="py-16 bg-theme-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-theme-primary mb-3">
@@ -224,7 +224,7 @@ export const FeaturesPage: React.FC = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 bg-theme-background rounded-2xl border border-theme">
+            <div className="p-6 bg-theme-background-secondary rounded-2xl border border-theme shadow-md">
               <div className="text-xs font-semibold text-theme-info-solid tracking-wider uppercase mb-3">Tier 1</div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">Operator + AI surface</h3>
               <ul className="text-sm text-theme-secondary space-y-2 leading-relaxed">
@@ -234,7 +234,7 @@ export const FeaturesPage: React.FC = () => {
                 <li>• 17 ActionCable channels for live UI updates</li>
               </ul>
             </div>
-            <div className="p-6 bg-theme-background rounded-2xl border border-theme">
+            <div className="p-6 bg-theme-background-secondary rounded-2xl border border-theme shadow-md">
               <div className="text-xs font-semibold text-theme-info-solid tracking-wider uppercase mb-3">Tier 2</div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">Control plane (Rails 8)</h3>
               <ul className="text-sm text-theme-secondary space-y-2 leading-relaxed">
@@ -244,7 +244,7 @@ export const FeaturesPage: React.FC = () => {
                 <li>• GitOps reconciler with declarative fleet.yaml</li>
               </ul>
             </div>
-            <div className="p-6 bg-theme-background rounded-2xl border border-theme">
+            <div className="p-6 bg-theme-background-secondary rounded-2xl border border-theme shadow-md">
               <div className="text-xs font-semibold text-theme-info-solid tracking-wider uppercase mb-3">Tier 3</div>
               <h3 className="text-xl font-bold text-theme-primary mb-3">On-node runtime</h3>
               <ul className="text-sm text-theme-secondary space-y-2 leading-relaxed">
@@ -318,8 +318,8 @@ export const FeaturesPage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              to="/plans"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-theme-info hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              to="/pricing"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-theme-info-solid hover:bg-theme-interactive-primary-hover text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <span>Try the Cloud — Free</span>
               <ArrowRight className="w-4 h-4" />
