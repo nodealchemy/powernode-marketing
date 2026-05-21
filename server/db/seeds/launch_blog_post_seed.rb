@@ -10,10 +10,16 @@
 #   cd server && bundle exec rails runner \
 #     "load Rails.root.join('../extensions/marketing/server/db/seeds/launch_blog_post_seed.rb')"
 
-author = User.joins(:account)
-             .where(role: %w[owner super_admin admin])
-             .order(:created_at)
-             .first
+# Find an author with admin-tier permissions. The legacy schema had a
+# `users.role` enum column; the current schema uses Role/UserRole join
+# tables. We pick the canonical admin user (admin@powernode.org seeded
+# by the platform's user seeds) or fall back to any user whose roles
+# include owner/admin/super_admin.
+author = User.find_by(email: "admin@powernode.org")
+author ||= User.joins(:roles)
+               .where(roles: { name: %w[owner super_admin admin] })
+               .order(:created_at)
+               .first
 
 raise "No admin user found — seed an admin first" unless author
 
