@@ -13,10 +13,10 @@ module Api
           # POST /api/v1/marketing/public/leads/waitlist
           def waitlist
             email = params[:email].to_s.strip.downcase
-            return render_error("Email is required", :unprocessable_entity) if email.blank?
+            return render_error("Email is required", :unprocessable_content) if email.blank?
 
             unless email.match?(URI::MailTo::EMAIL_REGEXP)
-              return render_error("Invalid email format", :unprocessable_entity)
+              return render_error("Invalid email format", :unprocessable_content)
             end
 
             signup = ::Marketing::WaitlistSignup.find_or_initialize_by(email: email)
@@ -55,7 +55,7 @@ module Api
             else
               render_error(
                 signup.errors.full_messages.first || "Could not add to waitlist",
-                :unprocessable_entity
+                :unprocessable_content
               )
             end
           end
