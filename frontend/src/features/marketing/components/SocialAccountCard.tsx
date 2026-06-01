@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  Twitter,
-  Linkedin,
-  Facebook,
-  Instagram,
-  Youtube,
+  MessageCircle,
+  Briefcase,
+  Users,
+  Camera,
+  Video,
   RefreshCw,
   Trash2,
   CheckCircle2,
@@ -22,11 +22,11 @@ interface SocialAccountCardProps {
 }
 
 const PLATFORM_ICONS: Record<SocialPlatform, React.ComponentType<{ className?: string }>> = {
-  twitter: Twitter,
-  linkedin: Linkedin,
-  facebook: Facebook,
-  instagram: Instagram,
-  youtube: Youtube,
+  twitter: MessageCircle,
+  linkedin: Briefcase,
+  facebook: Users,
+  instagram: Camera,
+  youtube: Video,
   tiktok: Wifi,
 };
 

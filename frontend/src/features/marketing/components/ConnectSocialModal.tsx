@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Twitter, Linkedin, Facebook, Instagram, Youtube, Wifi } from 'lucide-react';
+import { X, MessageCircle, Briefcase, Users, Camera, Video, Wifi } from 'lucide-react';
 import { logger } from '@/shared/utils/logger';
 import type { SocialPlatform } from '../types';
 
@@ -9,11 +9,11 @@ interface ConnectSocialModalProps {
 }
 
 const PLATFORMS: { value: SocialPlatform; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
-  { value: 'twitter', label: 'Twitter', icon: Twitter },
-  { value: 'linkedin', label: 'LinkedIn', icon: Linkedin },
-  { value: 'facebook', label: 'Facebook', icon: Facebook },
-  { value: 'instagram', label: 'Instagram', icon: Instagram },
-  { value: 'youtube', label: 'YouTube', icon: Youtube },
+  { value: 'twitter', label: 'Twitter', icon: MessageCircle },
+  { value: 'linkedin', label: 'LinkedIn', icon: Briefcase },
+  { value: 'facebook', label: 'Facebook', icon: Users },
+  { value: 'instagram', label: 'Instagram', icon: Camera },
+  { value: 'youtube', label: 'YouTube', icon: Video },
   { value: 'tiktok', label: 'TikTok', icon: Wifi },
 ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Twitter, Linkedin, Facebook, Instagram, MessageSquare, Bell } from 'lucide-react';
+import { Mail, MessageCircle, Briefcase, Users, Camera, MessageSquare, Bell } from 'lucide-react';
 import type { CampaignContent, ChannelType } from '../types';
 
 interface CampaignContentPreviewProps {
@@ -9,10 +9,10 @@ interface CampaignContentPreviewProps {
 
 const CHANNEL_ICONS: Record<ChannelType, React.ComponentType<{ className?: string }>> = {
   email: Mail,
-  twitter: Twitter,
-  linkedin: Linkedin,
-  facebook: Facebook,
-  instagram: Instagram,
+  twitter: MessageCircle,
+  linkedin: Briefcase,
+  facebook: Users,
+  instagram: Camera,
   sms: MessageSquare,
   push: Bell,
 };
