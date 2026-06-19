@@ -11,12 +11,13 @@ export const socialAccountsApi = {
     page?: number;
     per_page?: number;
     platform?: SocialPlatform;
-  }): Promise<{ accounts: SocialMediaAccount[]; pagination: Pagination }> => {
+  }): Promise<{ accounts: SocialMediaAccount[]; pagination: Pagination | null }> => {
     const response = await apiClient.get<ApiResponse<{
-      accounts: SocialMediaAccount[];
-      pagination: Pagination;
+      items: SocialMediaAccount[];
+      pagination?: Pagination;
     }>>('/marketing/social_accounts', { params });
-    return response.data.data;
+    const data = response.data.data;
+    return { accounts: data?.items ?? [], pagination: data?.pagination ?? null };
   },
 
   get: async (id: string): Promise<SocialMediaAccount> => {

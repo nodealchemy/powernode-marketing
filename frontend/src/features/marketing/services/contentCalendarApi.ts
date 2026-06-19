@@ -17,12 +17,13 @@ export const contentCalendarApi = {
     status?: ContentStatus;
     entry_type?: CalendarEntryType;
     campaign_id?: string;
-  }): Promise<{ entries: ContentCalendarEntry[]; pagination: Pagination }> => {
+  }): Promise<{ entries: ContentCalendarEntry[]; pagination: Pagination | null }> => {
     const response = await apiClient.get<ApiResponse<{
-      entries: ContentCalendarEntry[];
-      pagination: Pagination;
+      items: ContentCalendarEntry[];
+      pagination?: Pagination;
     }>>('/marketing/calendar', { params });
-    return response.data.data;
+    const data = response.data.data;
+    return { entries: data?.items ?? [], pagination: data?.pagination ?? null };
   },
 
   get: async (id: string): Promise<ContentCalendarEntry> => {

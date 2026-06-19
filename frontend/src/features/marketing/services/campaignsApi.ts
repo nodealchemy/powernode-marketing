@@ -16,12 +16,13 @@ export const campaignsApi = {
     status?: CampaignStatus;
     campaign_type?: CampaignType;
     search?: string;
-  }): Promise<{ campaigns: Campaign[]; pagination: Pagination }> => {
+  }): Promise<{ campaigns: Campaign[]; pagination: Pagination | null }> => {
     const response = await apiClient.get<ApiResponse<{
-      campaigns: Campaign[];
+      items: Campaign[];
       pagination: Pagination;
     }>>('/marketing/campaigns', { params });
-    return response.data.data;
+    const data = response.data.data;
+    return { campaigns: data?.items ?? [], pagination: data?.pagination ?? null };
   },
 
   get: async (id: string): Promise<Campaign> => {

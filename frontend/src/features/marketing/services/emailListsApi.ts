@@ -8,38 +8,68 @@ import type {
   Pagination,
 } from '../types';
 
+const num = (value: unknown): number => (typeof value === 'number' && Number.isFinite(value) ? value : 0);
+
+const normalizeEmailList = (raw: Partial<EmailList> | null | undefined): EmailList => ({
+  id: raw?.id ?? '',
+  name: raw?.name ?? '',
+  description: raw?.description ?? '',
+  subscriber_count: num(raw?.subscriber_count),
+  active_subscriber_count: num(raw?.active_subscriber_count),
+  tags: Array.isArray(raw?.tags) ? raw.tags : [],
+  double_opt_in: raw?.double_opt_in ?? false,
+  created_at: raw?.created_at ?? '',
+  updated_at: raw?.updated_at ?? '',
+});
+
+const normalizeSubscriber = (raw: Partial<EmailSubscriber> | null | undefined): EmailSubscriber => ({
+  id: raw?.id ?? '',
+  email_list_id: raw?.email_list_id ?? '',
+  email: raw?.email ?? '',
+  first_name: raw?.first_name ?? null,
+  last_name: raw?.last_name ?? null,
+  status: raw?.status ?? ('pending' as SubscriberStatus),
+  subscribed_at: raw?.subscribed_at ?? '',
+  unsubscribed_at: raw?.unsubscribed_at ?? null,
+  metadata: raw?.metadata ?? {},
+  created_at: raw?.created_at ?? '',
+  updated_at: raw?.updated_at ?? '',
+});
+
 export const emailListsApi = {
   list: async (params?: {
     page?: number;
     per_page?: number;
     search?: string;
-  }): Promise<{ email_lists: EmailList[]; pagination: Pagination }> => {
+  }): Promise<{ email_lists: EmailList[]; pagination: Pagination | null }> => {
     const response = await apiClient.get<ApiResponse<{
-      email_lists: EmailList[];
+      items: EmailList[];
       pagination: Pagination;
     }>>('/marketing/email_lists', { params });
-    return response.data.data;
+    const data = response.data.data;
+    const items = Array.isArray(data?.items) ? data.items : [];
+    return { email_lists: items.map(normalizeEmailList), pagination: data?.pagination ?? null };
   },
 
   get: async (id: string): Promise<EmailList> => {
     const response = await apiClient.get<ApiResponse<{
       email_list: EmailList;
     }>>(`/marketing/email_lists/${id}`);
-    return response.data.data.email_list;
+    return normalizeEmailList(response.data.data?.email_list);
   },
 
   create: async (data: EmailListFormData): Promise<EmailList> => {
     const response = await apiClient.post<ApiResponse<{
       email_list: EmailList;
     }>>('/marketing/email_lists', { email_list: data });
-    return response.data.data.email_list;
+    return normalizeEmailList(response.data.data?.email_list);
   },
 
   update: async (id: string, data: Partial<EmailListFormData>): Promise<EmailList> => {
     const response = await apiClient.patch<ApiResponse<{
       email_list: EmailList;
     }>>(`/marketing/email_lists/${id}`, { email_list: data });
-    return response.data.data.email_list;
+    return normalizeEmailList(response.data.data?.email_list);
   },
 
   delete: async (id: string): Promise<void> => {
@@ -56,7 +86,12 @@ export const emailListsApi = {
     }>>(`/marketing/email_lists/${id}/import`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
-    return response.data.data;
+    const data = response.data.data;
+    return {
+      imported: num(data?.imported),
+      skipped: num(data?.skipped),
+      errors: num(data?.errors),
+    };
   },
 
   // Subscriber management
@@ -65,12 +100,14 @@ export const emailListsApi = {
     per_page?: number;
     status?: SubscriberStatus;
     search?: string;
-  }): Promise<{ subscribers: EmailSubscriber[]; pagination: Pagination }> => {
+  }): Promise<{ subscribers: EmailSubscriber[]; pagination: Pagination | null }> => {
     const response = await apiClient.get<ApiResponse<{
-      subscribers: EmailSubscriber[];
+      items: EmailSubscriber[];
       pagination: Pagination;
     }>>(`/marketing/email_lists/${listId}/subscribers`, { params });
-    return response.data.data;
+    const data = response.data.data;
+    const items = Array.isArray(data?.items) ? data.items : [];
+    return { subscribers: items.map(normalizeSubscriber), pagination: data?.pagination ?? null };
   },
 
   addSubscriber: async (listId: string, data: {
@@ -82,7 +119,7 @@ export const emailListsApi = {
     const response = await apiClient.post<ApiResponse<{
       subscriber: EmailSubscriber;
     }>>(`/marketing/email_lists/${listId}/add_subscriber`, { subscriber: data });
-    return response.data.data.subscriber;
+    return normalizeSubscriber(response.data.data?.subscriber);
   },
 
   removeSubscriber: async (listId: string, _subscriberId: string): Promise<void> => {
