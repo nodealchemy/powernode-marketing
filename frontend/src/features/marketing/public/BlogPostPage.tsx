@@ -58,7 +58,7 @@ export const BlogPostPage: React.FC = () => {
           <div>
             <h1 className="text-3xl font-bold text-theme-primary mb-3">{error}</h1>
             <p className="text-theme-secondary">
-              Try the <Link to="/blog" className="text-theme-info hover:underline">blog index</Link> for
+              Try the <Link to="/blog" className="text-theme-info-fg hover:underline">blog index</Link> for
               the latest posts.
             </p>
           </div>
@@ -89,7 +89,7 @@ export const BlogPostPage: React.FC = () => {
             <div className="prose prose-lg max-w-none text-theme-secondary
                             prose-headings:text-theme-primary
                             prose-strong:text-theme-primary
-                            prose-a:text-theme-info hover:prose-a:underline
+                            prose-a:text-theme-info-fg hover:prose-a:underline
                             prose-code:text-theme-primary prose-code:bg-theme-surface prose-code:px-1 prose-code:py-0.5 prose-code:rounded
                             prose-pre:bg-theme-surface prose-pre:text-theme-primary
                             prose-blockquote:border-l-theme-info prose-blockquote:text-theme-secondary">

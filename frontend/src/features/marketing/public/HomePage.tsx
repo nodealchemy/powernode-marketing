@@ -20,8 +20,8 @@ export const HomePage: React.FC = () => {
       {/* Hero */}
       <section className="relative overflow-hidden pt-20 pb-28">
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-theme-info/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-20 w-96 h-96 bg-theme-info/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-theme-info-bg rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-20 w-96 h-96 bg-theme-info-bg rounded-full blur-3xl"></div>
         </div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center px-4 py-2 mb-8 rounded-full bg-theme-surface border border-theme">
@@ -209,7 +209,7 @@ export const HomePage: React.FC = () => {
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-            <div className="p-8 bg-theme-info/5 rounded-2xl border-2 border-theme-info-solid shadow-md">
+            <div className="p-8 bg-theme-info-bg rounded-2xl border-2 border-theme-info-solid shadow-md">
               <div className="text-sm font-semibold text-theme-info-solid tracking-wider uppercase mb-2">Free → Pro → Team</div>
               <h3 className="text-2xl font-bold text-theme-primary mb-4">Cloud</h3>
               <p className="text-theme-secondary leading-relaxed mb-6">

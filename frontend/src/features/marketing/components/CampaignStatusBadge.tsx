@@ -13,19 +13,19 @@ const STATUS_CONFIG: Record<CampaignStatus, { label: string; classes: string }> 
   },
   scheduled: {
     label: 'Scheduled',
-    classes: 'bg-theme-info bg-opacity-10 text-theme-info',
+    classes: 'bg-theme-info-bg text-theme-info-fg',
   },
   active: {
     label: 'Active',
-    classes: 'bg-theme-success bg-opacity-10 text-theme-success',
+    classes: 'bg-theme-success-bg text-theme-success-fg',
   },
   paused: {
     label: 'Paused',
-    classes: 'bg-theme-warning bg-opacity-10 text-theme-warning',
+    classes: 'bg-theme-warning-bg text-theme-warning-fg',
   },
   completed: {
     label: 'Completed',
-    classes: 'bg-theme-primary bg-opacity-10 text-theme-primary',
+    classes: 'bg-theme-interactive-primary/10 text-theme-primary',
   },
   archived: {
     label: 'Archived',

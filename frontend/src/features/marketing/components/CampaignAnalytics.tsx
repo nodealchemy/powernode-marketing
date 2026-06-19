@@ -30,7 +30,7 @@ export const CampaignAnalytics: React.FC = () => {
             onClick={() => setPeriodDays(days)}
             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
               periodDays === days
-                ? 'bg-theme-primary text-theme-on-primary'
+                ? 'bg-theme-interactive-primary text-theme-on-primary'
                 : 'bg-theme-surface text-theme-secondary hover:bg-theme-surface-hover'
             }`}
           >
@@ -46,8 +46,8 @@ export const CampaignAnalytics: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="card-theme p-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-theme-info bg-opacity-10">
-                <Eye className="w-5 h-5 text-theme-info" />
+              <div className="p-2 rounded-lg bg-theme-info-bg">
+                <Eye className="w-5 h-5 text-theme-info-fg" />
               </div>
               <div>
                 <p className="text-sm text-theme-secondary">Impressions</p>
@@ -59,8 +59,8 @@ export const CampaignAnalytics: React.FC = () => {
           </div>
           <div className="card-theme p-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-theme-warning bg-opacity-10">
-                <MousePointerClick className="w-5 h-5 text-theme-warning" />
+              <div className="p-2 rounded-lg bg-theme-warning-bg">
+                <MousePointerClick className="w-5 h-5 text-theme-warning-fg" />
               </div>
               <div>
                 <p className="text-sm text-theme-secondary">Clicks</p>
@@ -72,8 +72,8 @@ export const CampaignAnalytics: React.FC = () => {
           </div>
           <div className="card-theme p-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-theme-success bg-opacity-10">
-                <ArrowRightLeft className="w-5 h-5 text-theme-success" />
+              <div className="p-2 rounded-lg bg-theme-success-bg">
+                <ArrowRightLeft className="w-5 h-5 text-theme-success-fg" />
               </div>
               <div>
                 <p className="text-sm text-theme-secondary">Conversions</p>
@@ -85,8 +85,8 @@ export const CampaignAnalytics: React.FC = () => {
           </div>
           <div className="card-theme p-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-theme-primary bg-opacity-10">
-                <DollarSign className="w-5 h-5 text-theme-primary" />
+              <div className="p-2 rounded-lg bg-theme-interactive-primary/10">
+                <DollarSign className="w-5 h-5 text-theme-interactive-primary" />
               </div>
               <div>
                 <p className="text-sm text-theme-secondary">Revenue</p>
@@ -108,7 +108,7 @@ export const CampaignAnalytics: React.FC = () => {
       {/* Top Performers */}
       <div className="card-theme p-6">
         <h3 className="text-lg font-medium text-theme-primary mb-4 flex items-center gap-2">
-          <Trophy className="w-5 h-5 text-theme-warning" />
+          <Trophy className="w-5 h-5 text-theme-warning-fg" />
           Top Performing Campaigns
         </h3>
         {performersLoading ? (
@@ -137,7 +137,7 @@ export const CampaignAnalytics: React.FC = () => {
                     <td className="px-4 py-3 text-sm text-theme-primary text-right">{p.conversions.toLocaleString()}</td>
                     <td className="px-4 py-3 text-sm text-theme-primary text-right">{formatCurrency(p.revenue_cents)}</td>
                     <td className="px-4 py-3 text-sm text-right">
-                      <span className={`font-medium ${p.roi_percentage >= 0 ? 'text-theme-success' : 'text-theme-error'}`}>
+                      <span className={`font-medium ${p.roi_percentage >= 0 ? 'text-theme-success-fg' : 'text-theme-error-fg'}`}>
                         {p.roi_percentage >= 0 ? '+' : ''}{p.roi_percentage.toFixed(1)}%
                       </span>
                     </td>

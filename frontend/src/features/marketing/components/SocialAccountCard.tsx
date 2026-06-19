@@ -31,10 +31,10 @@ const PLATFORM_ICONS: Record<SocialPlatform, React.ComponentType<{ className?: s
 };
 
 const STATUS_CONFIG: Record<SocialAccountStatus, { icon: React.ComponentType<{ className?: string }>; color: string; label: string }> = {
-  connected: { icon: CheckCircle2, color: 'text-theme-success', label: 'Connected' },
-  disconnected: { icon: XCircle, color: 'text-theme-error', label: 'Disconnected' },
-  expired: { icon: AlertTriangle, color: 'text-theme-warning', label: 'Token Expired' },
-  error: { icon: XCircle, color: 'text-theme-error', label: 'Error' },
+  connected: { icon: CheckCircle2, color: 'text-theme-success-fg', label: 'Connected' },
+  disconnected: { icon: XCircle, color: 'text-theme-error-fg', label: 'Disconnected' },
+  expired: { icon: AlertTriangle, color: 'text-theme-warning-fg', label: 'Token Expired' },
+  error: { icon: XCircle, color: 'text-theme-error-fg', label: 'Error' },
 };
 
 export const SocialAccountCard: React.FC<SocialAccountCardProps> = ({
@@ -104,7 +104,7 @@ export const SocialAccountCard: React.FC<SocialAccountCardProps> = ({
           {(account.status === 'expired' || account.status === 'error') && (
             <button
               onClick={() => onRefreshToken(account.id)}
-              className="p-1.5 rounded hover:bg-theme-surface-hover text-theme-warning"
+              className="p-1.5 rounded hover:bg-theme-surface-hover text-theme-warning-fg"
               title="Refresh token"
             >
               <RefreshCw className="w-4 h-4" />
@@ -112,7 +112,7 @@ export const SocialAccountCard: React.FC<SocialAccountCardProps> = ({
           )}
           <button
             onClick={() => onDisconnect(account.id)}
-            className="p-1.5 rounded hover:bg-theme-surface-hover text-theme-error"
+            className="p-1.5 rounded hover:bg-theme-surface-hover text-theme-error-fg"
             title="Disconnect account"
           >
             <Trash2 className="w-4 h-4" />

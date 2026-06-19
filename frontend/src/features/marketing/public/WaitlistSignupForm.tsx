@@ -48,10 +48,10 @@ export const WaitlistSignupForm: React.FC<WaitlistSignupFormProps> = ({ source =
   if (success) {
     return (
       <div
-        className="max-w-md mx-auto p-6 bg-theme-success/10 rounded-2xl border border-theme-success-solid text-center"
+        className="max-w-md mx-auto p-6 bg-theme-success-bg rounded-2xl border border-theme-success-solid text-center"
         data-testid="waitlist-success"
       >
-        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-theme-success flex items-center justify-center">
+        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-theme-success-bg flex items-center justify-center">
           <Check className="w-6 h-6 text-white" />
         </div>
         <p className="text-theme-primary font-semibold">{success}</p>

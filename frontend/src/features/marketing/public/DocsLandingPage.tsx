@@ -126,8 +126,8 @@ export const DocsLandingPage: React.FC = () => {
                 data-testid={`docs-section-${section.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-theme-info/10 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-theme-info" />
+                  <div className="w-10 h-10 rounded-lg bg-theme-info-bg flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-theme-info-fg" />
                   </div>
                   <h2 className="text-lg font-bold text-theme-primary">{section.title}</h2>
                 </div>
@@ -141,7 +141,7 @@ export const DocsLandingPage: React.FC = () => {
                         rel="noopener noreferrer"
                         className="group flex items-start gap-2 text-sm text-theme-secondary hover:text-theme-primary"
                       >
-                        <ExternalLink className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-theme-tertiary group-hover:text-theme-info" />
+                        <ExternalLink className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-theme-tertiary group-hover:text-theme-info-fg" />
                         <span>
                           <span className="font-semibold group-hover:underline">{link.label}</span>
                           {link.description && (
@@ -157,10 +157,10 @@ export const DocsLandingPage: React.FC = () => {
           })}
         </div>
 
-        <div className="mt-12 p-6 rounded-xl bg-theme-info/5 border border-theme-info/20 text-center">
+        <div className="mt-12 p-6 rounded-xl bg-theme-info-bg border border-theme-info-border/20 text-center">
           <h3 className="text-lg font-bold text-theme-primary mb-2">Looking for something specific?</h3>
           <p className="text-sm text-theme-secondary mb-4">
-            The full documentation tree is organized under <code className="text-theme-info">docs/</code> in the repository.
+            The full documentation tree is organized under <code className="text-theme-info-fg">docs/</code> in the repository.
           </p>
           <a
             href={`${GITHUB_BASE}/docs`}

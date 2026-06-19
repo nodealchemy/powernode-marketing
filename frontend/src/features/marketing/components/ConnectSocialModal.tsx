@@ -40,7 +40,7 @@ export const ConnectSocialModal: React.FC<ConnectSocialModalProps> = ({ onConnec
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="card-theme-elevated p-6 w-full max-w-md">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-medium text-theme-primary">Connect Social Account</h3>
@@ -60,7 +60,7 @@ export const ConnectSocialModal: React.FC<ConnectSocialModalProps> = ({ onConnec
                   onClick={() => setSelectedPlatform(p.value)}
                   className={`flex flex-col items-center gap-1.5 p-3 rounded-lg border transition-colors ${
                     selectedPlatform === p.value
-                      ? 'border-theme-primary bg-theme-primary bg-opacity-5'
+                      ? 'border-theme-primary bg-theme-interactive-primary/5'
                       : 'border-theme hover:bg-theme-surface-hover'
                   }`}
                 >

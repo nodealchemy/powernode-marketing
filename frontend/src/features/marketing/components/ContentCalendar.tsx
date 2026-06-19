@@ -107,7 +107,7 @@ export const ContentCalendar: React.FC = () => {
   if (error) {
     return (
       <div className="card-theme p-6 text-center">
-        <p className="text-theme-error">{error}</p>
+        <p className="text-theme-error-fg">{error}</p>
       </div>
     );
   }
@@ -138,7 +138,7 @@ export const ContentCalendar: React.FC = () => {
             <button
               onClick={() => setViewMode('month')}
               className={`px-3 py-1.5 text-sm ${
-                viewMode === 'month' ? 'bg-theme-primary text-theme-on-primary' : 'bg-theme-surface text-theme-secondary'
+                viewMode === 'month' ? 'bg-theme-interactive-primary text-theme-on-primary' : 'bg-theme-surface text-theme-secondary'
               }`}
             >
               Month
@@ -146,7 +146,7 @@ export const ContentCalendar: React.FC = () => {
             <button
               onClick={() => setViewMode('week')}
               className={`px-3 py-1.5 text-sm ${
-                viewMode === 'week' ? 'bg-theme-primary text-theme-on-primary' : 'bg-theme-surface text-theme-secondary'
+                viewMode === 'week' ? 'bg-theme-interactive-primary text-theme-on-primary' : 'bg-theme-surface text-theme-secondary'
               }`}
             >
               Week
@@ -178,14 +178,14 @@ export const ContentCalendar: React.FC = () => {
               <div
                 key={i}
                 className={`min-h-[100px] border-b border-r border-theme p-1.5 ${
-                  !isCurrentMonth ? 'bg-theme-surface bg-opacity-50' : ''
+                  !isCurrentMonth ? 'bg-theme-surface/50' : ''
                 }`}
                 onClick={() => { setSelectedDate(dateKey); setShowCreateForm(true); }}
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${
                     isToday
-                      ? 'bg-theme-primary text-theme-on-primary'
+                      ? 'bg-theme-interactive-primary text-theme-on-primary'
                       : isCurrentMonth
                         ? 'text-theme-primary'
                         : 'text-theme-tertiary'
@@ -251,7 +251,7 @@ const QuickCreateModal: React.FC<QuickCreateModalProps> = ({ date, onSave, onClo
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="card-theme-elevated p-6 w-full max-w-md">
         <h3 className="text-lg font-medium text-theme-primary mb-4">
           New Entry - {new Date(date + 'T00:00:00').toLocaleDateString()}

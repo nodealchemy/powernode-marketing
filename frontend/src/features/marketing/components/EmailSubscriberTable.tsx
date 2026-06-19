@@ -10,9 +10,9 @@ interface EmailSubscriberTableProps {
 }
 
 const STATUS_COLORS: Record<SubscriberStatus, string> = {
-  active: 'text-theme-success',
-  unsubscribed: 'text-theme-error',
-  bounced: 'text-theme-warning',
+  active: 'text-theme-success-fg',
+  unsubscribed: 'text-theme-error-fg',
+  bounced: 'text-theme-warning-fg',
   pending: 'text-theme-secondary',
 };
 
@@ -135,7 +135,7 @@ export const EmailSubscriberTable: React.FC<EmailSubscriberTableProps> = ({ list
         <div className="flex justify-center py-8"><LoadingSpinner /></div>
       ) : error ? (
         <div className="card-theme p-4 text-center">
-          <p className="text-theme-error">{error}</p>
+          <p className="text-theme-error-fg">{error}</p>
           <button onClick={refresh} className="btn-theme btn-theme-secondary mt-2">Retry</button>
         </div>
       ) : subscribers.length === 0 ? (
@@ -172,7 +172,7 @@ export const EmailSubscriberTable: React.FC<EmailSubscriberTableProps> = ({ list
                   <td className="px-4 py-3 text-right">
                     <button
                       onClick={() => handleRemove(sub.id)}
-                      className="p-1 rounded hover:bg-theme-surface-hover text-theme-error"
+                      className="p-1 rounded hover:bg-theme-surface-hover text-theme-error-fg"
                       title="Remove subscriber"
                     >
                       <Trash2 className="w-4 h-4" />

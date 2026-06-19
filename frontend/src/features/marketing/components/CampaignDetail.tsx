@@ -46,7 +46,7 @@ export const CampaignDetail: React.FC<CampaignDetailProps> = ({ campaignId }) =>
   if (error || !campaign) {
     return (
       <div className="card-theme p-6 text-center">
-        <p className="text-theme-error">{error || 'Campaign not found'}</p>
+        <p className="text-theme-error-fg">{error || 'Campaign not found'}</p>
         <button onClick={() => navigate('/app/marketing/campaigns')} className="btn-theme btn-theme-secondary mt-4">
           Back to Campaigns
         </button>
@@ -86,21 +86,21 @@ export const CampaignDetail: React.FC<CampaignDetailProps> = ({ campaignId }) =>
       {/* Metrics Overview */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="card-theme p-4">
-          <Eye className="w-5 h-5 text-theme-info mb-2" />
+          <Eye className="w-5 h-5 text-theme-info-fg mb-2" />
           <p className="text-xs text-theme-secondary">Impressions</p>
           <p className="text-lg font-semibold text-theme-primary">
             {(campaign.metrics_summary?.impressions || 0).toLocaleString()}
           </p>
         </div>
         <div className="card-theme p-4">
-          <MousePointerClick className="w-5 h-5 text-theme-warning mb-2" />
+          <MousePointerClick className="w-5 h-5 text-theme-warning-fg mb-2" />
           <p className="text-xs text-theme-secondary">Clicks</p>
           <p className="text-lg font-semibold text-theme-primary">
             {(campaign.metrics_summary?.clicks || 0).toLocaleString()}
           </p>
         </div>
         <div className="card-theme p-4">
-          <ArrowRightLeft className="w-5 h-5 text-theme-success mb-2" />
+          <ArrowRightLeft className="w-5 h-5 text-theme-success-fg mb-2" />
           <p className="text-xs text-theme-secondary">Conversions</p>
           <p className="text-lg font-semibold text-theme-primary">
             {(campaign.metrics_summary?.conversions || 0).toLocaleString()}

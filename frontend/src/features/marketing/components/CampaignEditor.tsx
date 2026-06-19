@@ -173,7 +173,7 @@ export const CampaignEditor: React.FC<CampaignEditorProps> = ({
                 onClick={() => toggleChannel(ch.value)}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors ${
                   formData.channels.includes(ch.value)
-                    ? 'bg-theme-primary text-theme-on-primary border-transparent'
+                    ? 'bg-theme-interactive-primary text-theme-on-primary border-transparent'
                     : 'bg-theme-surface text-theme-secondary border-theme hover:bg-theme-surface-hover'
                 }`}
               >

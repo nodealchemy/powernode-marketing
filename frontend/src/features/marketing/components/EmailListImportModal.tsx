@@ -37,7 +37,7 @@ export const EmailListImportModal: React.FC<EmailListImportModalProps> = ({ onIm
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="card-theme-elevated p-6 w-full max-w-md">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-medium text-theme-primary">Import Subscribers</h3>
@@ -58,7 +58,7 @@ export const EmailListImportModal: React.FC<EmailListImportModalProps> = ({ onIm
           >
             {selectedFile ? (
               <div className="flex items-center justify-center gap-2">
-                <FileText className="w-6 h-6 text-theme-info" />
+                <FileText className="w-6 h-6 text-theme-info-fg" />
                 <div>
                   <p className="text-sm font-medium text-theme-primary">{selectedFile.name}</p>
                   <p className="text-xs text-theme-tertiary">
@@ -86,16 +86,16 @@ export const EmailListImportModal: React.FC<EmailListImportModalProps> = ({ onIm
           {/* Result */}
           {result && (
             <div className="card-theme p-4 space-y-1">
-              <p className="text-sm text-theme-success">
+              <p className="text-sm text-theme-success-fg">
                 Imported: {result.imported}
               </p>
               {result.skipped > 0 && (
-                <p className="text-sm text-theme-warning">
+                <p className="text-sm text-theme-warning-fg">
                   Skipped: {result.skipped}
                 </p>
               )}
               {result.errors > 0 && (
-                <p className="text-sm text-theme-error">
+                <p className="text-sm text-theme-error-fg">
                   Errors: {result.errors}
                 </p>
               )}

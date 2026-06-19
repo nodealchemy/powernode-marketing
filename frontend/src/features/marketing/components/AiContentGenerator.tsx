@@ -58,7 +58,7 @@ export const AiContentGenerator: React.FC<AiContentGeneratorProps> = ({
   return (
     <div className="card-theme p-6 space-y-4">
       <div className="flex items-center gap-2">
-        <Sparkles className="w-5 h-5 text-theme-warning" />
+        <Sparkles className="w-5 h-5 text-theme-warning-fg" />
         <h3 className="text-lg font-medium text-theme-primary">AI Content Generator</h3>
       </div>
 
@@ -101,7 +101,7 @@ export const AiContentGenerator: React.FC<AiContentGeneratorProps> = ({
       </div>
 
       {error && (
-        <div className="p-3 rounded-lg bg-theme-error bg-opacity-10 text-theme-error text-sm">
+        <div className="p-3 rounded-lg bg-theme-error-bg text-theme-error-fg text-sm">
           {error}
         </div>
       )}
@@ -159,7 +159,7 @@ export const AiContentGenerator: React.FC<AiContentGeneratorProps> = ({
                 {result.hashtags.map(tag => (
                   <span
                     key={tag}
-                    className="px-2 py-1 rounded bg-theme-info bg-opacity-10 text-theme-info text-xs cursor-pointer hover:bg-opacity-20"
+                    className="px-2 py-1 rounded bg-theme-info-bg text-theme-info-fg text-xs cursor-pointer"
                     onClick={() => handleCopy(tag)}
                   >
                     {tag}

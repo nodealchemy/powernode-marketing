@@ -22,7 +22,7 @@ export const MarketingCampaignDetailPage: React.FC = () => {
         <CampaignDetail campaignId={id} />
       ) : (
         <div className="card-theme p-6 text-center">
-          <p className="text-theme-error">Campaign ID is required.</p>
+          <p className="text-theme-error-fg">Campaign ID is required.</p>
         </div>
       )}
     </PageContainer>

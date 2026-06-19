@@ -100,7 +100,7 @@ export const CampaignDashboard: React.FC = () => {
   if (error) {
     return (
       <div className="card-theme p-6 text-center">
-        <p className="text-theme-error">{error}</p>
+        <p className="text-theme-error-fg">{error}</p>
         <button onClick={refresh} className="btn-theme btn-theme-secondary mt-4">
           Retry
         </button>
@@ -114,8 +114,8 @@ export const CampaignDashboard: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="card-theme p-4">
           <div className="flex items-center space-x-3">
-            <div className="p-2 rounded-lg bg-theme-info bg-opacity-10">
-              <Megaphone className="w-5 h-5 text-theme-info" />
+            <div className="p-2 rounded-lg bg-theme-info-bg">
+              <Megaphone className="w-5 h-5 text-theme-info-fg" />
             </div>
             <div>
               <p className="text-sm text-theme-secondary">Total Campaigns</p>
@@ -125,8 +125,8 @@ export const CampaignDashboard: React.FC = () => {
         </div>
         <div className="card-theme p-4">
           <div className="flex items-center space-x-3">
-            <div className="p-2 rounded-lg bg-theme-success bg-opacity-10">
-              <Eye className="w-5 h-5 text-theme-success" />
+            <div className="p-2 rounded-lg bg-theme-success-bg">
+              <Eye className="w-5 h-5 text-theme-success-fg" />
             </div>
             <div>
               <p className="text-sm text-theme-secondary">Active</p>
@@ -138,8 +138,8 @@ export const CampaignDashboard: React.FC = () => {
         </div>
         <div className="card-theme p-4">
           <div className="flex items-center space-x-3">
-            <div className="p-2 rounded-lg bg-theme-warning bg-opacity-10">
-              <MousePointerClick className="w-5 h-5 text-theme-warning" />
+            <div className="p-2 rounded-lg bg-theme-warning-bg">
+              <MousePointerClick className="w-5 h-5 text-theme-warning-fg" />
             </div>
             <div>
               <p className="text-sm text-theme-secondary">Total Clicks</p>
@@ -151,8 +151,8 @@ export const CampaignDashboard: React.FC = () => {
         </div>
         <div className="card-theme p-4">
           <div className="flex items-center space-x-3">
-            <div className="p-2 rounded-lg bg-theme-primary bg-opacity-10">
-              <ArrowRightLeft className="w-5 h-5 text-theme-primary" />
+            <div className="p-2 rounded-lg bg-theme-interactive-primary/10">
+              <ArrowRightLeft className="w-5 h-5 text-theme-interactive-primary" />
             </div>
             <div>
               <p className="text-sm text-theme-secondary">Total Conversions</p>
@@ -311,7 +311,7 @@ export const CampaignDashboard: React.FC = () => {
                           </button>
                           <button
                             onClick={() => handleAction('delete', campaign.id)}
-                            className="w-full text-left px-3 py-2 text-sm text-theme-error hover:bg-theme-surface-hover flex items-center gap-2"
+                            className="w-full text-left px-3 py-2 text-sm text-theme-error-fg hover:bg-theme-surface-hover flex items-center gap-2"
                           >
                             <Trash2 className="w-3.5 h-3.5" /> Delete
                           </button>

@@ -8,11 +8,11 @@ interface ContentCalendarEntryProps {
 }
 
 const TYPE_COLORS: Record<string, string> = {
-  post: 'bg-theme-info',
-  campaign_launch: 'bg-theme-success',
-  email_blast: 'bg-theme-warning',
-  deadline: 'bg-theme-error',
-  milestone: 'bg-theme-primary',
+  post: 'bg-theme-info-bg',
+  campaign_launch: 'bg-theme-success-bg',
+  email_blast: 'bg-theme-warning-bg',
+  deadline: 'bg-theme-error-bg',
+  milestone: 'bg-theme-interactive-primary',
 };
 
 export const ContentCalendarEntry: React.FC<ContentCalendarEntryProps> = ({
@@ -28,7 +28,7 @@ export const ContentCalendarEntry: React.FC<ContentCalendarEntryProps> = ({
     return (
       <div
         onClick={(e) => { e.stopPropagation(); onClick?.(); }}
-        className={`text-[11px] px-1.5 py-0.5 rounded truncate cursor-pointer text-theme-on-primary ${colorClass} bg-opacity-80`}
+        className={`text-[11px] px-1.5 py-0.5 rounded truncate cursor-pointer text-theme-on-primary ${colorClass}`}
         style={entry.color ? { backgroundColor: entry.color } : undefined}
         title={entry.title}
       >

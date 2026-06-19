@@ -60,7 +60,7 @@ export const SocialMediaManager: React.FC = () => {
   if (error) {
     return (
       <div className="card-theme p-6 text-center">
-        <p className="text-theme-error">{error}</p>
+        <p className="text-theme-error-fg">{error}</p>
         <button onClick={refresh} className="btn-theme btn-theme-secondary mt-4">Retry</button>
       </div>
     );
@@ -76,13 +76,13 @@ export const SocialMediaManager: React.FC = () => {
         </div>
         <div className="card-theme p-4">
           <p className="text-sm text-theme-secondary">Active</p>
-          <p className="text-2xl font-semibold text-theme-success">
+          <p className="text-2xl font-semibold text-theme-success-fg">
             {accounts.filter(a => a.status === 'connected').length}
           </p>
         </div>
         <div className="card-theme p-4">
           <p className="text-sm text-theme-secondary">Needs Attention</p>
-          <p className="text-2xl font-semibold text-theme-warning">
+          <p className="text-2xl font-semibold text-theme-warning-fg">
             {accounts.filter(a => a.status === 'expired' || a.status === 'error').length}
           </p>
         </div>

@@ -55,7 +55,7 @@ export const ChannelPerformanceChart: React.FC<ChannelPerformanceChartProps> = (
             {/* Bar */}
             <div className="h-6 bg-theme-surface rounded-full overflow-hidden">
               <div
-                className="h-full bg-theme-info rounded-full transition-all"
+                className="h-full bg-theme-info-bg rounded-full transition-all"
                 style={{ width: `${(channel.impressions / maxImpressions) * 100}%` }}
               />
             </div>
@@ -72,7 +72,7 @@ export const ChannelPerformanceChart: React.FC<ChannelPerformanceChartProps> = (
                 Revenue: <span className="text-theme-primary font-medium">{formatCurrency(channel.revenue_cents)}</span>
               </span>
               <span className="text-theme-secondary">
-                ROI: <span className={`font-medium ${channel.roi_percentage >= 0 ? 'text-theme-success' : 'text-theme-error'}`}>
+                ROI: <span className={`font-medium ${channel.roi_percentage >= 0 ? 'text-theme-success-fg' : 'text-theme-error-fg'}`}>
                   {channel.roi_percentage >= 0 ? '+' : ''}{channel.roi_percentage.toFixed(1)}%
                 </span>
               </span>

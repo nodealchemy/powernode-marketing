@@ -19,9 +19,9 @@ const CHANNEL_ICONS: Record<ChannelType, React.ComponentType<{ className?: strin
 
 const STATUS_COLORS: Record<string, string> = {
   draft: 'text-theme-secondary',
-  review: 'text-theme-info',
-  approved: 'text-theme-warning',
-  published: 'text-theme-success',
+  review: 'text-theme-info-fg',
+  approved: 'text-theme-warning-fg',
+  published: 'text-theme-success-fg',
 };
 
 export const CampaignContentPreview: React.FC<CampaignContentPreviewProps> = ({ content, onClick }) => {

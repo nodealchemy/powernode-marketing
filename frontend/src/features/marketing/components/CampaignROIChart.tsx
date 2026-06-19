@@ -32,15 +32,15 @@ export const CampaignROIChart: React.FC<CampaignROIChartProps> = ({ statistics, 
 
       {/* ROI Headline */}
       <div className="flex items-center gap-4 mb-6">
-        <div className={`p-3 rounded-lg ${roiPositive ? 'bg-theme-success bg-opacity-10' : 'bg-theme-error bg-opacity-10'}`}>
+        <div className={`p-3 rounded-lg ${roiPositive ? 'bg-theme-success-bg' : 'bg-theme-error-bg'}`}>
           {roiPositive ? (
-            <TrendingUp className={`w-8 h-8 text-theme-success`} />
+            <TrendingUp className={`w-8 h-8 text-theme-success-fg`} />
           ) : (
-            <TrendingDown className={`w-8 h-8 text-theme-error`} />
+            <TrendingDown className={`w-8 h-8 text-theme-error-fg`} />
           )}
         </div>
         <div>
-          <p className={`text-3xl font-bold ${roiPositive ? 'text-theme-success' : 'text-theme-error'}`}>
+          <p className={`text-3xl font-bold ${roiPositive ? 'text-theme-success-fg' : 'text-theme-error-fg'}`}>
             {statistics.roi_percentage >= 0 ? '+' : ''}{statistics.roi_percentage.toFixed(1)}%
           </p>
           <p className="text-sm text-theme-secondary">Overall ROI</p>
@@ -51,14 +51,14 @@ export const CampaignROIChart: React.FC<CampaignROIChartProps> = ({ statistics, 
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div className="p-4 rounded-lg bg-theme-surface">
           <div className="flex items-center gap-2 mb-1">
-            <DollarSign className="w-4 h-4 text-theme-success" />
+            <DollarSign className="w-4 h-4 text-theme-success-fg" />
             <p className="text-xs text-theme-secondary">Total Revenue</p>
           </div>
           <p className="text-xl font-semibold text-theme-primary">{formatCurrency(statistics.total_revenue_cents)}</p>
         </div>
         <div className="p-4 rounded-lg bg-theme-surface">
           <div className="flex items-center gap-2 mb-1">
-            <DollarSign className="w-4 h-4 text-theme-error" />
+            <DollarSign className="w-4 h-4 text-theme-error-fg" />
             <p className="text-xs text-theme-secondary">Total Spent</p>
           </div>
           <p className="text-xl font-semibold text-theme-primary">{formatCurrency(statistics.total_spent_cents)}</p>
@@ -74,7 +74,7 @@ export const CampaignROIChart: React.FC<CampaignROIChartProps> = ({ statistics, 
           </div>
           <div className="h-4 bg-theme-surface rounded-full overflow-hidden">
             <div
-              className="h-full bg-theme-success rounded-full transition-all"
+              className="h-full bg-theme-success-bg rounded-full transition-all"
               style={{
                 width: `${Math.min(100, statistics.total_spent_cents > 0
                   ? (statistics.total_revenue_cents / Math.max(statistics.total_revenue_cents, statistics.total_spent_cents)) * 100
@@ -90,7 +90,7 @@ export const CampaignROIChart: React.FC<CampaignROIChartProps> = ({ statistics, 
           </div>
           <div className="h-4 bg-theme-surface rounded-full overflow-hidden">
             <div
-              className="h-full bg-theme-error rounded-full transition-all"
+              className="h-full bg-theme-error-bg rounded-full transition-all"
               style={{
                 width: `${Math.min(100, statistics.total_revenue_cents > 0
                   ? (statistics.total_spent_cents / Math.max(statistics.total_revenue_cents, statistics.total_spent_cents)) * 100
@@ -110,7 +110,7 @@ export const CampaignROIChart: React.FC<CampaignROIChartProps> = ({ statistics, 
             <p className="text-xs text-theme-secondary">Total</p>
           </div>
           <div>
-            <p className="text-lg font-semibold text-theme-success">{statistics.active_campaigns}</p>
+            <p className="text-lg font-semibold text-theme-success-fg">{statistics.active_campaigns}</p>
             <p className="text-xs text-theme-secondary">Active</p>
           </div>
           <div>

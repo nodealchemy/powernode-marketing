@@ -40,7 +40,7 @@ export const BlogIndexPage: React.FC = () => {
 
         {error && (
           <div className="text-center py-16">
-            <p className="text-theme-danger">{error}</p>
+            <p className="text-theme-danger-fg">{error}</p>
           </div>
         )}
 
@@ -66,7 +66,7 @@ export const BlogIndexPage: React.FC = () => {
                   to={`/blog/${post.slug}`}
                   className="group block"
                 >
-                  <h2 className="text-2xl md:text-3xl font-bold text-theme-primary group-hover:text-theme-info transition-colors mb-3">
+                  <h2 className="text-2xl md:text-3xl font-bold text-theme-primary group-hover:text-theme-info-fg transition-colors mb-3">
                     {post.title}
                   </h2>
                   {post.excerpt && (
@@ -87,7 +87,7 @@ export const BlogIndexPage: React.FC = () => {
                         {post.estimated_read_time} min read
                       </span>
                     )}
-                    <span className="inline-flex items-center gap-1 text-theme-info group-hover:translate-x-0.5 transition-transform">
+                    <span className="inline-flex items-center gap-1 text-theme-info-fg group-hover:translate-x-0.5 transition-transform">
                       Read post <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>

@@ -73,7 +73,7 @@ export const EmailListManager: React.FC = () => {
   if (error) {
     return (
       <div className="card-theme p-6 text-center">
-        <p className="text-theme-error">{error}</p>
+        <p className="text-theme-error-fg">{error}</p>
         <button onClick={refresh} className="btn-theme btn-theme-secondary mt-4">Retry</button>
       </div>
     );
@@ -164,8 +164,8 @@ export const EmailListManager: React.FC = () => {
             >
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-theme-info bg-opacity-10">
-                    <Mail className="w-5 h-5 text-theme-info" />
+                  <div className="p-2 rounded-lg bg-theme-info-bg">
+                    <Mail className="w-5 h-5 text-theme-info-fg" />
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-theme-primary">{list.name}</h4>
@@ -184,7 +184,7 @@ export const EmailListManager: React.FC = () => {
                   </button>
                   <button
                     onClick={() => handleDelete(list.id)}
-                    className="p-1 rounded hover:bg-theme-surface-hover text-theme-error"
+                    className="p-1 rounded hover:bg-theme-surface-hover text-theme-error-fg"
                     title="Delete list"
                   >
                     <Trash2 className="w-4 h-4" />
