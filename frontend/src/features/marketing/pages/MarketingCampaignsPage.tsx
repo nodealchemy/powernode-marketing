@@ -4,6 +4,7 @@ import { Plus } from 'lucide-react';
 import { PageContainer, PageAction } from '@/shared/components/layout/PageContainer';
 import { CampaignDashboard } from '../components/CampaignDashboard';
 import { CampaignEditor } from '../components/CampaignEditor';
+import { Modal } from '@/shared/components/ui/Modal';
 import { campaignsApi } from '../services/campaignsApi';
 import { logger } from '@/shared/utils/logger';
 import type { CampaignFormData } from '../types';
@@ -26,7 +27,7 @@ export const MarketingCampaignsPage: React.FC = () => {
     {
       id: 'create-campaign',
       label: 'New Campaign',
-      onClick: () => setShowEditor(!showEditor),
+      onClick: () => setShowEditor(true),
       variant: 'primary',
       icon: Plus,
     },
@@ -45,13 +46,18 @@ export const MarketingCampaignsPage: React.FC = () => {
       breadcrumbs={breadcrumbs}
       actions={pageActions}
     >
-      {showEditor && (
+      <CampaignDashboard />
+      <Modal
+        isOpen={showEditor}
+        onClose={() => setShowEditor(false)}
+        title="New Campaign"
+        size="3xl"
+      >
         <CampaignEditor
           onSave={handleSave}
           onCancel={() => setShowEditor(false)}
         />
-      )}
-      <CampaignDashboard />
+      </Modal>
     </PageContainer>
   );
 };
