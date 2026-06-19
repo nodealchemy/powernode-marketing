@@ -115,7 +115,7 @@ export const EmailSubscriberTable: React.FC<EmailSubscriberTableProps> = ({ list
             placeholder="Search subscribers..."
             value={search}
             onChange={(e) => { setSearch(e.target.value); setPage(1); }}
-            className="input-theme pl-10 w-full"
+            className="input-theme pl-10! w-full"
           />
         </div>
         <select

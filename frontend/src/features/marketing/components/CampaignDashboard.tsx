@@ -167,23 +167,23 @@ export const CampaignDashboard: React.FC = () => {
       {/* Filters */}
       <div className="card-theme p-4">
         <div className="flex flex-col sm:flex-row gap-4">
-          <div className="relative flex-1">
+          <div className="relative flex-1 form-field-icon">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-theme-tertiary" />
             <input
               type="text"
               placeholder="Search campaigns..."
               value={search}
               onChange={(e) => { setSearch(e.target.value); setPage(1); }}
-              className="input-theme pl-10 w-full"
+              className="input-theme w-full h-12"
             />
           </div>
           <div className="flex gap-3">
-            <div className="relative">
+            <div className="relative form-field-icon">
               <Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-theme-tertiary" />
               <select
                 value={statusFilter}
                 onChange={(e) => { setStatusFilter(e.target.value as CampaignStatus | ''); setPage(1); }}
-                className="input-theme pl-10 pr-8"
+                className="input-theme min-w-[200px] h-12"
               >
                 {STATUS_OPTIONS.map(opt => (
                   <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -193,7 +193,7 @@ export const CampaignDashboard: React.FC = () => {
             <select
               value={typeFilter}
               onChange={(e) => { setTypeFilter(e.target.value as CampaignType | ''); setPage(1); }}
-              className="input-theme pr-8"
+              className="input-theme h-12"
             >
               {TYPE_OPTIONS.map(opt => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
