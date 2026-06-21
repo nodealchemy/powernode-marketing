@@ -106,7 +106,7 @@ DEMO_AGENTS.each do |spec|
     a.provider = provider
     a.mcp_metadata = {
       "model_config" => {
-        "model" => "claude-sonnet-4-6",
+        "model_requirements" => { "tier" => "reasoning" },
         "temperature" => 0.7,
         "max_tokens" => 4096
       }
