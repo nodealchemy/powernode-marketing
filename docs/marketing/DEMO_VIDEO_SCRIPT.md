@@ -61,8 +61,8 @@ These get captured live for inclusion (cross-reference [`SCREENSHOTS_TODO.md`](.
 
 | Variant | Duration | Where it lives |
 |---------|----------|----------------|
-| **Main 90s** | 1:30 | HomePage above-fold, YouTube, Twitter |
-| **30s social cut** | 0:30 | LinkedIn, Twitter (autoplay limit), Instagram Reels |
+| **Main 90s** | 1:30 | HomePage above-fold, YouTube, X |
+| **30s social cut** | 0:30 | LinkedIn, X (autoplay limit), Instagram Reels |
 | **15s hero loop** | 0:15 | HomePage hero background (silent, autoplay) — uses scenes from 0:18–0:33 |
 
 ## Distribution checklist
@@ -73,7 +73,7 @@ These get captured live for inclusion (cross-reference [`SCREENSHOTS_TODO.md`](.
 - [ ] Tweet thread launch with 30s cut + still frames as carousel
 - [ ] LinkedIn post with 30s cut + the comparison table screenshot
 - [ ] Submit to Show HN (Hacker News) on day-of-launch with HomePage URL
-- [ ] Add `og:video` meta tag pointing at hosted MP4 for rich Twitter/Slack previews
+- [ ] Add `og:video` meta tag pointing at hosted MP4 for rich X/Slack previews
 
 ## Production timeline (rough)
 
