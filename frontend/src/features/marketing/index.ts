@@ -18,7 +18,6 @@ export { ConnectSocialModal } from './components/ConnectSocialModal';
 export { CampaignAnalytics } from './components/CampaignAnalytics';
 export { CampaignROIChart } from './components/CampaignROIChart';
 export { ChannelPerformanceChart } from './components/ChannelPerformanceChart';
-export { AiContentGenerator } from './components/AiContentGenerator';
 
 // Hooks
 export { useCampaigns, useCampaign } from './hooks/useCampaigns';
