@@ -5,13 +5,6 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { PublicPageContainer } from '@/shared/components/layout/PublicPageContainer';
 import { blogApi, BlogPostDetail } from '../services/blogApi';
 
-const mainNav = [
-  { label: 'Features', path: '/features' },
-  { label: 'Pricing', path: '/pricing' },
-  { label: 'Blog', path: '/blog' },
-  { label: 'Docs', path: '/docs' },
-];
-
 export const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = React.useState<BlogPostDetail | null>(null);
@@ -39,7 +32,6 @@ export const BlogPostPage: React.FC = () => {
     <PublicPageContainer
       title={post?.title || 'Blog'}
       description={post?.excerpt || undefined}
-      mainNav={mainNav}
     >
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Link

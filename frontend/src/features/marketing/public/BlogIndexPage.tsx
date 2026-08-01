@@ -4,13 +4,6 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { PublicPageContainer } from '@/shared/components/layout/PublicPageContainer';
 import { blogApi, BlogPostSummary } from '../services/blogApi';
 
-const mainNav = [
-  { label: 'Features', path: '/features' },
-  { label: 'Pricing', path: '/pricing' },
-  { label: 'Blog', path: '/blog' },
-  { label: 'Docs', path: '/docs' },
-];
-
 export const BlogIndexPage: React.FC = () => {
   const [posts, setPosts] = React.useState<BlogPostSummary[]>([]);
   const [loading, setLoading] = React.useState(true);
@@ -29,7 +22,6 @@ export const BlogIndexPage: React.FC = () => {
     <PublicPageContainer
       title="Blog"
       description="Updates, deep-dives, and post-mortems from the Powernode team. Filed under: AI agent ops, knowledge graphs, swarm coordination, and the operational realities of running production agent fleets."
-      mainNav={mainNav}
     >
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {loading && (

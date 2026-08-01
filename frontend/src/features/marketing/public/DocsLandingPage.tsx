@@ -2,13 +2,6 @@ import React from 'react';
 import { ExternalLink, BookOpen, Server, Layout, Brain, Cog, Cpu, ShieldCheck, TestTube } from 'lucide-react';
 import { PublicPageContainer } from '@/shared/components/layout/PublicPageContainer';
 
-const mainNav = [
-  { label: 'Features', path: '/features' },
-  { label: 'Pricing', path: '/pricing' },
-  { label: 'Blog', path: '/blog' },
-  { label: 'Docs', path: '/docs' },
-];
-
 const GITHUB_BASE = 'https://github.com/nodealchemy/powernode-platform/blob/develop';
 
 interface DocSection {
@@ -113,7 +106,6 @@ export const DocsLandingPage: React.FC = () => {
     <PublicPageContainer
       title="Documentation"
       description="Curated entry points into the Powernode codebase. Documentation lives in the GitHub repository and is rendered there — links below jump to the canonical markdown."
-      mainNav={mainNav}
     >
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

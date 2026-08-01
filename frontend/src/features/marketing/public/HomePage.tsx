@@ -11,12 +11,7 @@ import { WaitlistSignupForm } from './WaitlistSignupForm';
 
 export const HomePage: React.FC = () => {
   return (
-    <PublicPageContainer
-      mainNav={[
-        { label: 'Pricing', path: '/pricing' },
-        { label: 'Features', path: '/features' },
-      ]}
-    >
+    <PublicPageContainer>
       {/* Hero */}
       <section className="relative overflow-hidden pt-20 pb-28">
         <div className="absolute inset-0">

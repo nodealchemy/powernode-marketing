@@ -107,10 +107,6 @@ export const FeaturesPage: React.FC = () => {
     <PublicPageContainer
       title="Features"
       description="Everything you need to run a production AI agent fleet — control, coordination, governance, and the infrastructure to host it."
-      mainNav={[
-        { label: 'Pricing', path: '/pricing' },
-        { label: 'Features', path: '/features' },
-      ]}
     >
       <section className="py-12 bg-theme-background-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
