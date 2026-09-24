@@ -47,7 +47,7 @@ either:
 
 | Asset | Route | Login as | Embedded at |
 |-------|-------|----------|-------------|
-| Fleet Dashboard | `/app/system/fleet` | admin | FeaturesPage — "See it in action" |
+| Fleet Dashboard | `/app/system/operations/fleet` | admin | FeaturesPage — "See it in action" |
 | Template Composer | `/app/system/templates/compose` | admin | FeaturesPage — "See it in action" |
 | SDWAN Topology | `/app/system/sdwan` | admin | FeaturesPage — "See it in action" |
 | AI Agents | `/app/ai/agents` | **demo** | FeaturesPage — "See it in action" |
