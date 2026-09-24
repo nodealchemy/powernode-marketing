@@ -38,10 +38,9 @@ export const BlogIndexPage: React.FC = () => {
 
         {!loading && !error && posts.length === 0 && (
           <div className="text-center py-16">
-            <h2 className="text-2xl font-bold text-theme-primary mb-3">First post coming soon</h2>
+            <h2 className="text-2xl font-bold text-theme-primary mb-3">No posts yet</h2>
             <p className="text-theme-secondary max-w-xl mx-auto">
-              The blog launches alongside the OSS announcement. In the meantime, follow the project on
-              GitHub for commits and release notes.
+              Follow the project on GitHub for commits and release notes.
             </p>
           </div>
         )}
