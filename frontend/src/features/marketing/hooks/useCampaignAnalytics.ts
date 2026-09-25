@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { analyticsApi } from '../services/analyticsApi';
+import { marketingAnalyticsApi } from '../services/analyticsApi';
 import type {
   AnalyticsOverview,
   CampaignStatistics,
@@ -23,7 +23,7 @@ export function useAnalyticsOverview(options: UseAnalyticsOptions = {}) {
     try {
       setLoading(true);
       setError(null);
-      const result = await analyticsApi.overview({
+      const result = await marketingAnalyticsApi.overview({
         period_start: options.periodStart,
         period_end: options.periodEnd,
       });
@@ -51,7 +51,7 @@ export function useChannelAnalytics(options: UseAnalyticsOptions = {}) {
     try {
       setLoading(true);
       setError(null);
-      const result = await analyticsApi.channels({
+      const result = await marketingAnalyticsApi.channels({
         period_start: options.periodStart,
         period_end: options.periodEnd,
       });
@@ -79,7 +79,7 @@ export function useRoiAnalytics(options: UseAnalyticsOptions = {}) {
     try {
       setLoading(true);
       setError(null);
-      const result = await analyticsApi.roi({
+      const result = await marketingAnalyticsApi.roi({
         period_start: options.periodStart,
         period_end: options.periodEnd,
       });
@@ -107,7 +107,7 @@ export function useTopPerformers(options: UseAnalyticsOptions & { limit?: number
     try {
       setLoading(true);
       setError(null);
-      const result = await analyticsApi.topPerformers({
+      const result = await marketingAnalyticsApi.topPerformers({
         period_start: options.periodStart,
         period_end: options.periodEnd,
         limit: options.limit,
@@ -138,7 +138,7 @@ export function useCampaignMetrics(campaignId: string | null, options: UseAnalyt
     try {
       setLoading(true);
       setError(null);
-      const result = await analyticsApi.campaignDetail(campaignId, {
+      const result = await marketingAnalyticsApi.campaignDetail(campaignId, {
         period_start: options.periodStart,
         period_end: options.periodEnd,
       });

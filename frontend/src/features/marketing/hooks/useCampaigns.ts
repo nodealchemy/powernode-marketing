@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { campaignsApi } from '../services/campaignsApi';
+import { marketingCampaignsApi } from '../services/campaignsApi';
 import type { Campaign, CampaignFormData, CampaignStatus, CampaignType, Pagination } from '../types';
 
 interface UseCampaignsOptions {
@@ -20,7 +20,7 @@ export function useCampaigns(options: UseCampaignsOptions = {}) {
     try {
       setLoading(true);
       setError(null);
-      const result = await campaignsApi.list({
+      const result = await marketingCampaignsApi.list({
         page: options.page,
         per_page: options.perPage,
         status: options.status,
@@ -59,7 +59,7 @@ export function useCampaign(id: string | null) {
     try {
       setLoading(true);
       setError(null);
-      const result = await campaignsApi.get(id);
+      const result = await marketingCampaignsApi.get(id);
       setCampaign(result);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to fetch campaign');
@@ -73,54 +73,54 @@ export function useCampaign(id: string | null) {
   }, [fetchCampaign]);
 
   const createCampaign = useCallback(async (data: CampaignFormData) => {
-    const result = await campaignsApi.create(data);
+    const result = await marketingCampaignsApi.create(data);
     setCampaign(result);
     return result;
   }, []);
 
   const updateCampaign = useCallback(async (data: Partial<CampaignFormData>) => {
     if (!id) return;
-    const result = await campaignsApi.update(id, data);
+    const result = await marketingCampaignsApi.update(id, data);
     setCampaign(result);
     return result;
   }, [id]);
 
   const deleteCampaign = useCallback(async () => {
     if (!id) return;
-    await campaignsApi.delete(id);
+    await marketingCampaignsApi.delete(id);
   }, [id]);
 
   const executeCampaign = useCallback(async () => {
     if (!id) return;
-    const result = await campaignsApi.execute(id);
+    const result = await marketingCampaignsApi.execute(id);
     setCampaign(result);
     return result;
   }, [id]);
 
   const pauseCampaign = useCallback(async () => {
     if (!id) return;
-    const result = await campaignsApi.pause(id);
+    const result = await marketingCampaignsApi.pause(id);
     setCampaign(result);
     return result;
   }, [id]);
 
   const resumeCampaign = useCallback(async () => {
     if (!id) return;
-    const result = await campaignsApi.resume(id);
+    const result = await marketingCampaignsApi.resume(id);
     setCampaign(result);
     return result;
   }, [id]);
 
   const archiveCampaign = useCallback(async () => {
     if (!id) return;
-    const result = await campaignsApi.archive(id);
+    const result = await marketingCampaignsApi.archive(id);
     setCampaign(result);
     return result;
   }, [id]);
 
   const cloneCampaign = useCallback(async () => {
     if (!id) return;
-    const result = await campaignsApi.clone(id);
+    const result = await marketingCampaignsApi.clone(id);
     return result;
   }, [id]);
 

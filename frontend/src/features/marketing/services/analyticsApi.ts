@@ -65,7 +65,7 @@ const normalizePerformer = (raw: Partial<TopPerformer> | null | undefined): TopP
   roi_percentage: num(raw?.roi_percentage),
 });
 
-export const analyticsApi = {
+export const marketingAnalyticsApi = {
   overview: async (params?: {
     period_start?: string;
     period_end?: string;

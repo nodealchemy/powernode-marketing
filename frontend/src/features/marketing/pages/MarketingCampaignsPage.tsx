@@ -5,7 +5,7 @@ import { PageContainer, PageAction } from '@/shared/components/layout/PageContai
 import { CampaignDashboard } from '../components/CampaignDashboard';
 import { CampaignEditor } from '../components/CampaignEditor';
 import { Modal } from '@/shared/components/ui/Modal';
-import { campaignsApi } from '../services/campaignsApi';
+import { marketingCampaignsApi } from '../services/campaignsApi';
 import { logger } from '@/shared/utils/logger';
 import type { CampaignFormData } from '../types';
 
@@ -15,7 +15,7 @@ export const MarketingCampaignsPage: React.FC = () => {
 
   const handleSave = async (data: CampaignFormData) => {
     try {
-      const campaign = await campaignsApi.create(data);
+      const campaign = await marketingCampaignsApi.create(data);
       setShowEditor(false);
       navigate(`/app/marketing/campaigns/${campaign.id}`);
     } catch (err) {

@@ -34,11 +34,11 @@ export {
 export { useCampaignContents } from './hooks/useCampaignContents';
 
 // Services
-export { campaignsApi } from './services/campaignsApi';
+export { marketingCampaignsApi } from './services/campaignsApi';
 export { contentCalendarApi } from './services/contentCalendarApi';
 export { emailListsApi } from './services/emailListsApi';
 export { socialAccountsApi } from './services/socialAccountsApi';
-export { analyticsApi } from './services/analyticsApi';
+export { marketingAnalyticsApi } from './services/analyticsApi';
 
 // Types
 export type {

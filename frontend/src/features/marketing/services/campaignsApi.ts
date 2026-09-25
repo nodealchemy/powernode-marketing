@@ -9,7 +9,7 @@ import type {
   Pagination,
 } from '../types';
 
-export const campaignsApi = {
+export const marketingCampaignsApi = {
   list: async (params?: {
     page?: number;
     per_page?: number;

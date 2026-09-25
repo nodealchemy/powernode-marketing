@@ -17,7 +17,7 @@ import {
 import { useCampaigns } from '../hooks/useCampaigns';
 import { CampaignStatusBadge } from './CampaignStatusBadge';
 import { LoadingSpinner } from '@/shared/components/ui/LoadingSpinner';
-import { campaignsApi } from '../services/campaignsApi';
+import { marketingCampaignsApi } from '../services/campaignsApi';
 import { logger } from '@/shared/utils/logger';
 import type { CampaignStatus, CampaignType } from '../types';
 
@@ -60,22 +60,22 @@ export const CampaignDashboard: React.FC = () => {
     try {
       switch (action) {
         case 'execute':
-          await campaignsApi.execute(campaignId);
+          await marketingCampaignsApi.execute(campaignId);
           break;
         case 'pause':
-          await campaignsApi.pause(campaignId);
+          await marketingCampaignsApi.pause(campaignId);
           break;
         case 'resume':
-          await campaignsApi.resume(campaignId);
+          await marketingCampaignsApi.resume(campaignId);
           break;
         case 'archive':
-          await campaignsApi.archive(campaignId);
+          await marketingCampaignsApi.archive(campaignId);
           break;
         case 'clone':
-          await campaignsApi.clone(campaignId);
+          await marketingCampaignsApi.clone(campaignId);
           break;
         case 'delete':
-          await campaignsApi.delete(campaignId);
+          await marketingCampaignsApi.delete(campaignId);
           break;
       }
       setOpenMenuId(null);
