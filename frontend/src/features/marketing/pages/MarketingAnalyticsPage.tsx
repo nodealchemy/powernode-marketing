@@ -6,7 +6,7 @@ export const MarketingAnalyticsPage: React.FC = () => {
   const breadcrumbs = [
     { label: 'Dashboard', href: '/app' },
     { label: 'Marketing', href: '/app/marketing/campaigns' },
-    { label: 'Analytics' },
+    { label: 'Marketing Analytics' },
   ];
 
   return (
