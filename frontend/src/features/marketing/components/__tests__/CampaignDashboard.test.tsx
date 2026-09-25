@@ -43,7 +43,7 @@ jest.mock('../../hooks/useCampaigns', () => ({
 }));
 
 jest.mock('../../services/campaignsApi', () => ({
-  campaignsApi: {
+  marketingCampaignsApi: {
     execute: jest.fn(),
     pause: jest.fn(),
     resume: jest.fn(),
@@ -53,11 +53,11 @@ jest.mock('../../services/campaignsApi', () => ({
   },
 }));
 
-jest.mock('../../../../shared/utils/logger', () => ({
+jest.mock('@/shared/utils/logger', () => ({
   logger: { error: jest.fn(), info: jest.fn(), warn: jest.fn(), debug: jest.fn() },
 }));
 
-jest.mock('../../../../shared/components/ui/LoadingSpinner', () => ({
+jest.mock('@/shared/components/ui/LoadingSpinner', () => ({
   LoadingSpinner: () => <div data-testid="loading-spinner">Loading...</div>,
 }));
 
