@@ -1,0 +1,11 @@
+# Local copies of shared UI primitives awaiting their sweep (plan §3, fc-48).
+# extensions/marketing's ledger: only paths inside its own tree.
+# Format: <path>|<rule>[|<name>], one line per occurrence, sorted.
+# Regenerate: bash scripts/generate-local-primitive-baseline.sh — only to record a removal.
+extensions/marketing/frontend/src/features/marketing/components/CampaignAnalytics.tsx|empty-state
+extensions/marketing/frontend/src/features/marketing/components/CampaignAnalytics.tsx|format-currency|formatCurrency
+extensions/marketing/frontend/src/features/marketing/components/CampaignDashboard.tsx|format-currency|formatCurrency
+extensions/marketing/frontend/src/features/marketing/components/CampaignDetail.tsx|format-currency|formatCurrency
+extensions/marketing/frontend/src/features/marketing/components/CampaignROIChart.tsx|format-currency|formatCurrency
+extensions/marketing/frontend/src/features/marketing/components/ChannelPerformanceChart.tsx|empty-state
+extensions/marketing/frontend/src/features/marketing/components/ChannelPerformanceChart.tsx|format-currency|formatCurrency
