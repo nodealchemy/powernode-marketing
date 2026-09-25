@@ -66,7 +66,7 @@ export function register(): void {
       { label: 'Calendar', path: '/app/marketing/calendar', icon: 'CalendarDays', permission: 'marketing.calendar.read', order: 2 },
       { label: 'Email Lists', path: '/app/marketing/email-lists', icon: 'Mail', permission: 'marketing.email_lists.read', order: 3 },
       { label: 'Social', path: '/app/marketing/social', icon: 'Share2', permission: 'marketing.social.read', order: 4 },
-      { label: 'Analytics', path: '/app/marketing/analytics', icon: 'TrendingUp', permission: 'marketing.analytics.read', order: 5 },
+      { label: 'Marketing Analytics', path: '/app/marketing/analytics', icon: 'TrendingUp', permission: 'marketing.analytics.read', order: 5 },
     ],
   }]);
 }
