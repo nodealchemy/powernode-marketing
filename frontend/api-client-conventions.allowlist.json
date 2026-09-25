@@ -1,0 +1,12 @@
+{
+  "families": {
+    "/marketing/campaigns": [
+      "frontend/src/features/marketing/hooks/useCampaignContents.ts",
+      "frontend/src/features/marketing/services/campaignsApi.ts"
+    ],
+    "/marketing/public": [
+      "frontend/src/features/marketing/services/blogApi.ts",
+      "frontend/src/features/marketing/services/leadsApi.ts"
+    ]
+  }
+}
