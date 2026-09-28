@@ -23,6 +23,7 @@ const MarketingCalendarPage = lazyPage(() => import('./features/marketing/pages/
 const MarketingEmailListsPage = lazyPage(() => import('./features/marketing/pages/MarketingEmailListsPage').then(m => ({ default: m.MarketingEmailListsPage })));
 const MarketingSocialPage = lazyPage(() => import('./features/marketing/pages/MarketingSocialPage').then(m => ({ default: m.MarketingSocialPage })));
 const MarketingAnalyticsPage = lazyPage(() => import('./features/marketing/pages/MarketingAnalyticsPage').then(m => ({ default: m.MarketingAnalyticsPage })));
+const SocialOAuthCallbackPage = lazyPage(() => import('./features/marketing/pages/SocialOAuthCallbackPage').then(m => ({ default: m.SocialOAuthCallbackPage })));
 
 // Lazy-loaded PUBLIC marketing page components (rendered at root domain, no auth).
 // Pricing is intentionally NOT here — it lives in the business extension at /pricing.
@@ -51,6 +52,10 @@ export function register(): void {
     { path: '/marketing/email-lists', component: MarketingEmailListsPage, permission: 'marketing.email_lists.read' },
     { path: '/marketing/social', component: MarketingSocialPage, permission: 'marketing.social.read' },
     { path: '/marketing/analytics', component: MarketingAnalyticsPage, permission: 'marketing.analytics.read' },
+    // ConnectSocialModal.tsx sends this as its OAuth redirect_uri; without a
+    // route here the browser lands on a blank pane after the operator
+    // authorizes with the provider (C15 F3).
+    { path: '/marketing/social/callback', component: SocialOAuthCallbackPage, permission: 'marketing.social.read' },
   ]);
 
   // Marketing navigation section
